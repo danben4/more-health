@@ -5,7 +5,7 @@ import './Progress.css';
 const getBarColor = (totalCompleted) => {
   if (totalCompleted > 0.8) return "#7dbd32";
   if (totalCompleted > 0.4) return "#efc030";
-  return "#ed344e";
+  return "#d50000";
 };
 
 const Progress = ({totalCompleted}) => {
@@ -18,7 +18,7 @@ const Progress = ({totalCompleted}) => {
           backgroundColor: getBarColor(totalCompleted)
         }}
       />
-      <span className="number">{totalCompleted * 100}% completed!</span>
+      <span className="number">{totalCompleted * 100}%</span>
     </div>
   )
 };
