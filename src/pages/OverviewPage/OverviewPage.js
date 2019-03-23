@@ -12,7 +12,6 @@ class OverviewPage extends Component {
     const { userId } = this.props;
     return (
       <div>
-        <Heading text="Active goals" />
         {
           userId ?
           <FirebaseDatabaseNode path={"users/" + userId}>
@@ -22,14 +21,18 @@ class OverviewPage extends Component {
                   <Loading /> :
                   ! data.value ?
                     <EmptyResponse text="No active goals!" /> :
-                    <Goals goals={data.value.usergoals} />
+                    <>
+                      <Heading text="Active goals" />
+                      <Goals goals={data.value.usergoals} />
+                      <Seperator />
+                      <Heading text="Completed goals" />
+                      <Goals goals={data.value.usergoals} />
+                    </>
               );
             }}
           </FirebaseDatabaseNode> :
           <Loading />
         }
-        <Seperator />
-        <Heading text="Completed goals" />
       </div>
     );
   }
