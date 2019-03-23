@@ -9,7 +9,6 @@ methods = ['GET', 'POST', 'PUT', 'DELETE']
 @app.route('/coupons', methods=methods)
 @app.route('/coupons/<path>', methods=methods)
 def catch_all(path=''):
-    p = os.environ
     flask.request.path = '/' + path
     return coupons(flask.request)
 

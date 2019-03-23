@@ -1,9 +1,6 @@
 import firebase_admin
 from firebase_admin import db
 import flask
-# import os
-# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/eysteinngunnlaugsson/Documents/healthcare_hackathon/actual_project/api/more-health-firebase-adminsdk-z3um3-7eecbde28b.json"
-
 
 firebase_admin.initialize_app(options={
     'databaseURL': 'https://more-health.firebaseio.com/',
@@ -11,10 +8,8 @@ firebase_admin.initialize_app(options={
 
 COUPONS = db.reference('coupons')
 
-
 def __get_coupon_by_id(id):
     return COUPONS.child(id).get()
-
 
 def create_coupon(request):
     req = request.json
@@ -71,6 +66,8 @@ def coupons(request):
             return delete_coupon(id)
         elif request.method == 'PUT':
             return update_coupon(id, request)
+        elif request.method == 'PUSH':
+            return create_coupon(request)    
         else:
             return 'Method not supported', 405
     return 'URL not found', 404
