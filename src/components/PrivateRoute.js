@@ -9,7 +9,7 @@ const PrivateRoute = (props) => {
       exact
       render={props =>
         isSignedIn ? (
-          <Component userId={userId} />
+          <Component userId={userId} {...props} />
         ) : (
           <Redirect
             to={{
