@@ -20,7 +20,10 @@ const SingleGoal = ({goalId, goal, userId}) => {
             </div>
             {
               ! data.value ?
-                <FirebaseDatabaseMutation type="push" path={"users/" + userId + "/usergoals/" + goalId}>
+                <FirebaseDatabaseMutation
+                  type="set"
+                  path={"users/" + userId + "/usergoals/" + goalId}
+                >
                   {({ runMutation }) => (
                     <Button
                       onClick={() => {
