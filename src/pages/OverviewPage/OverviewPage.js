@@ -7,12 +7,26 @@ import EmptyResponse from '../../components/EmptyResponse';
 import Goals from '../../components/Goals';
 import Seperator from '../../components/Seperator';
 
+const filterActiveGoals = (goals) => Object.keys(goals).map(
+  key => {
+    return {
+      key,
+      ...goals[key]
+    };
+  }
+);
+
+// return Object.keys(goals).map(
+//   key =>
+//     <Goal key={key} goal={goals[key]} isCompanyGoal={false} />
+// );
+
 /*
-const filterActiveGoals = (goals) => "TODO";
 
 const filterCompletedGoals = (goals) => "TODO";
 
 const filterInCompletedGoals = (goals) => "TODO";
+
 */
 
 class OverviewPage extends Component {
@@ -26,13 +40,14 @@ class OverviewPage extends Component {
             {data => {
               if (data.isLoading) return <Loading />;
               if (! data.value) return <EmptyResponse text="No goals!" />;
+              const activeGoals = filterActiveGoals(data.value.usergoals);
               return (
                 <>
                   <Heading text="Active Goals" />
-                  <Goals goals={data.value.usergoals} />
+                  <Goals goals={activeGoals} />
                   <Seperator />
                   <Heading text="Completed Goals" />
-                  <Goals goals={data.value.usergoals} />
+                  <Goals goals={activeGoals} />
                 </>
               );
             }}
