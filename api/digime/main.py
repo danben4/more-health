@@ -30,8 +30,8 @@ def __sync_digime(request):
     goal_list = user['usergoals']
     for key, goal in goal_list.items():
         cat = goal['category']
-        goal_start = datetime.strptime(goal['startDate'], '%d/%m/%Y')
-        goal_end = datetime.strptime(goal['endDate'], '%d/%m/%Y')
+        goal_start = datetime.strptime(goal['startDate'], '%Y-%m-%d')
+        goal_end = datetime.strptime(goal['endDate'], '%Y-%m-%d')
         increment = run_cat_name if cat == 'Run' else count_cat_name
         root = 'data'
         total = 0
