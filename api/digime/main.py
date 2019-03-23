@@ -27,12 +27,12 @@ def __sync_digime(request):
     user = __get_user_by_id(id)
     if not user:
         return 'No user found', 404
-    __add_user_recent_activities(user, file_index)
+    __add_user_recent_activities(USERS.child(id), file_index)
     goal_list = user['usergoals']
     for key, goal in goal_list.items():
         cat = goal['category']
-        goal_start = datetime.strptime(goal['startDate'], '%Y-%m-%d')
-        goal_end = datetime.strptime(goal['endDate'], '%Y-%m-%d')
+        goal_start = goal['startDate']
+        goal_end = goal['endDate']
         increment = run_cat_name if cat == 'Run' else count_cat_name
         root = 'data'
         total = 0
@@ -48,8 +48,8 @@ def __sync_digime(request):
                 if data['fileDescriptor']['serviceName'] == 'fitbit':
                     for file_data in data['fileData']:
                         ts = int(file_data["createddate"] / 1000)
-                        stamp = datetime.utcfromtimestamp(ts)  # .strftime('%Y-%m-%d %H:%M:%S')
-                        if goal_start <= stamp <= goal_end:
+                        # stamp = datetime.utcfromtimestamp(ts)  # .strftime('%Y-%m-%d %H:%M:%S')
+                        if goal_start <= ts <= goal_end:
                             activity_name = file_data["activityname"]
                             # Found activity that matches the current goal
                             steps = file_data["steps"]
@@ -75,22 +75,21 @@ def __sync_digime(request):
 def __add_user_recent_activities(user, file_index):
     all_files = ['demo1.json', 'demo2.json', 'demo3.json']
     file = all_files[file_index]
-    activities = []
     activities_ref = user.child('useractivities')
+    activities_ref.delete()
     try:
         with open(os.path.join('data', file), encoding='utf-8') as f:
             data = json.load(f)
             if data['fileDescriptor']['serviceName'] == 'fitbit':
                 for file_data in data['fileData']:
-                    ts = int(file_data["createddate"] / 1000)
+                    ts = int(file_data["createddate"])
                     activity = {}
-                    activity['date'] = datetime.utcfromtimestamp(ts)  # .strftime('%Y-%m-%d %H:%M:%S')
-                    activity['name'] = file_data["activityname"]
+                    activity['date'] = ts  # .strftime('%Y-%m-%d %H:%M:%S')
+                    activity['category'] = file_data["activityname"]
                     activity['calories'] = file_data["calories"]
                     activity['distance'] = file_data["distance"]
                     # test
                     activities_ref.push(activity)
-                    activities.append(json.dumps(activity))
     except Exception as e:
         print(str(e))
         pass
