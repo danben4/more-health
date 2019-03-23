@@ -4,7 +4,12 @@ import { FirebaseDatabaseNode } from "@react-firebase/database";
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
-import Goal from '../../components/Goal';
+import Goals from '../../components/Goals';
+
+const getGoals = (goals) =>
+  Object.keys(goals).map(
+    key => {return {id: key, ...goals[key]}}
+  );
 
 class GoalsPage extends Component {
   render() {
@@ -15,16 +20,12 @@ class GoalsPage extends Component {
         {
           userId ?
           <FirebaseDatabaseNode path={"goals"}>
-            {({value, isLoading}) => {
+            {data => {
+              if (data.isLoading) return <Loading />;
+              if (! data.value) return <EmptyResponse text="No goals!" />;
+              const goals = getGoals(data.value);
               return (
-                isLoading ? 
-                <Loading /> :
-                  ! value ?
-                    <EmptyResponse text="No active goals!" /> : 
-                    Object.keys(value).map(
-                      key => {
-                        return <Goal key={key} goal={value[key]} isCompanyGoal ={true} /> }
-                    )
+                <Goals goals={goals} isCompanyGoal />
               );
             }}
           </FirebaseDatabaseNode> :

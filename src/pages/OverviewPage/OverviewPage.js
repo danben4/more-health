@@ -30,8 +30,8 @@ class OverviewPage extends Component {
               if (data.isLoading) return <Loading />;
               if (! data.value) return <EmptyResponse text="No goals!" />;
               const activeGoals = filterActiveGoals(data.value.usergoals);
-              let inCompletedGoals = filterInCompletedGoals(activeGoals);
-              let completedGoals = filterCompletedGoals(activeGoals);
+              const inCompletedGoals = filterInCompletedGoals(activeGoals);
+              const completedGoals = filterCompletedGoals(activeGoals);
               return (
                 <>
                   <Heading text="Active Goals" />
@@ -44,7 +44,7 @@ class OverviewPage extends Component {
                   <Heading text="Completed Goals" />
                   {completedGoals.length === 0 ?
                     <EmptyResponse text="No completed goals!" /> :
-                    <Goals goals={completedGoals} />
+                    <Goals goals={completedGoals} isCompanyGoal={false} />
                   }
                 </>
               );
