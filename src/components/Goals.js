@@ -1,12 +1,13 @@
 import React from 'react';
 
+import Goal from './Goal';
 import './Goal.css';
 
-const Goal = ({goals}) => {
-  console.log("goals", goals);
-  return (
-    <div>Goals!</div>
-  )
+const Goals = ({goals}) => {
+  return Object.keys(goals).map(
+    key =>
+      <Goal key={key} goal={goals[key]} />
+  );
 };
 
-export default Goal;
+export default Goals;

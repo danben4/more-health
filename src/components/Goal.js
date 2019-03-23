@@ -1,11 +1,14 @@
 import React from 'react';
 
+import Progress from './Progress';
 import './Goal.css';
 
-const Goal = () => {
+const Goal = ({goal}) => {
   return (
     <div className="goal">
-      goal!
+      <div>{goal.name}</div>
+      <div>{goal.description}</div>
+      <Progress totalCompleted={goal.totalCompleted} />
     </div>
   )
 };
