@@ -1,5 +1,5 @@
 import React from 'react';
-import { FirebaseDatabaseMutation } from "@react-firebase/database";
+import { FirebaseDatabaseNode, FirebaseDatabaseMutation } from "@react-firebase/database";
 
 import Button from './Button';
 import './SingleGoal.css';
@@ -9,32 +9,39 @@ const SingleGoal = ({goalId, goal, userId}) => {
   const today = Math.round((new Date()).getTime() / 1000);
   const endDate = today + seconds;
   return (
-    <>
-      <div className="singleGoal">
-        <div className="singleGoalDescription">{goal.description}</div>
-        <img alt="" src={goal.imageUrl} className="singleGoalImage" /> :
-      </div>
-      <FirebaseDatabaseMutation type="push" path={"users/" + userId + "/usergoals/" + goalId}>
-        {({ runMutation }) => (
-          <Button
-            onClick={() => {
-              runMutation({
-                companyName: goal.companyName,
-                description: goal.description,
-                endDate: endDate,
-                imageUrl: goal.imageUrl,
-                isComplete: 0,
-                name: goal.name,
-                startDate: today,
-                totalCompleted: 0.0
-              })
-            }}
-          >
-            Activate goal!
-          </Button>
-        )}
-      </FirebaseDatabaseMutation>;
-    </>
+    <FirebaseDatabaseNode path={"users/" + userId + "/usergoals/" + goalId}>
+      {data => {
+        console.log("data", data);
+        return (
+          <>
+            <div className="singleGoal">
+              <div className="singleGoalDescription">{goal.description}</div>
+              <img alt="" src={goal.imageUrl} className="singleGoalImage" /> :
+            </div>
+            <FirebaseDatabaseMutation type="push" path={"users/" + userId + "/usergoals/" + goalId}>
+              {({ runMutation }) => (
+                <Button
+                  onClick={() => {
+                    runMutation({
+                      companyName: goal.companyName,
+                      description: goal.description,
+                      endDate: endDate,
+                      imageUrl: goal.imageUrl,
+                      isComplete: 0,
+                      name: goal.name,
+                      startDate: today,
+                      totalCompleted: 0.0
+                    })
+                  }}
+                >
+                  Activate goal!
+                </Button>
+              )}
+            </FirebaseDatabaseMutation>
+          </>
+        );
+      }}
+    </FirebaseDatabaseNode>
   )
 };
 
