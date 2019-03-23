@@ -11,7 +11,7 @@ const RedirectRoute = (props) => {
         isSignedIn ? (
           <Redirect
             to={{
-              pathname: "/overview",
+              pathname: "/goals",
               state: { from: props.location }
             }}
           />
