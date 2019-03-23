@@ -18,7 +18,7 @@ class GoalPage extends Component {
           return (
             <>
               <Heading text={goal.name} />
-              <SingleGoal goal />
+              <SingleGoal goal={goal} />
             </>
           );
         }}

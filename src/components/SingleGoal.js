@@ -6,7 +6,8 @@ const SingleGoal = ({goal}) => {
   console.log("single goal", goal);
   return (
     <div className="singleGoal">
-      Single goal!
+      <div className="singleGoalDescription">{goal.description}</div>
+      <img alt="" src={goal.imageUrl} className="singleGoalImage" /> :
     </div>
   )
 };
