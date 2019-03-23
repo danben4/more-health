@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-firebase/auth": "0.2.9",
+    "firebase": "5.9.1",
     "react": "16.8.5",
     "react-dom": "16.8.5",
     "react-scripts": "2.1.8"
