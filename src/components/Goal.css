@@ -1,3 +1,66 @@
 .goal {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.goal:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.goalContent {
+  width: 100%;
+  display: flex;
+  border: 1px solid #332f33;
+  padding: 20px;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.goal:nth-child(even) .goalContent {
+  margin-right: -80px;
+}
+
+.goal:nth-child(odd) .goalContent {
+  margin-left: -80px;
+}
+
+.goalName {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.goalDescription {
+  font-size: 16px;
+}
+
+.goalRightContent,
+.goalLeftContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goalLeftContent {
+  align-items: flex-end;
+}
+
+.goalCompany {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.goalProgress {
+  width: 100%;
+  max-width: 200px;
+}
+
+.goalImage {
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
 }
