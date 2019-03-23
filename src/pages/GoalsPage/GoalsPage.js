@@ -16,9 +16,6 @@ class GoalsPage extends Component {
           userId ?
           <FirebaseDatabaseNode path={"companies"}>
             {({value, isLoading}) => {
-              {
-              console.log("companies", value);
-              console.log("isLoadingCompanies", isLoading);}
               return (
                 isLoading ? 
                 <Loading /> :
