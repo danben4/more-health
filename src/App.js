@@ -8,12 +8,14 @@ import { FirebaseDatabaseProvider } from "@react-firebase/database";
 
 import { config } from "./firebaseConfig";
 
+import Loading from './components/Loading'
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
 
 import Header from './components/Header';
-import PrivateRouter from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
+import RedirectRoute from './components/RedirectRoute'
 
 class Router extends Component {
   render() {
@@ -24,17 +26,15 @@ class Router extends Component {
           <FirebaseAuthProvider {...config} firebase={firebase}>
             <FirebaseDatabaseProvider {...config} firebase={firebase}>
               <FirebaseAuthConsumer>
-                {({ isSignedIn, user }) => {
-                  return isSignedIn ? 
+                {({ isSignedIn, providerId, user }) => {
+                  return providerId ?
                     <BrowserRouter>
-                      <Route path="/" exact component={LoginPage} />
+                      <RedirectRoute path="/" component={LoginPage} />
                       <Route path="/login" component={LoginPage}/>
-                      <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
-                      <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
-                    </BrowserRouter> :
-                    <BrowserRouter>
-                      <Route path="/login" component={LoginPage}/>
-                    </BrowserRouter>
+                      <PrivateRoute path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
+                      <PrivateRoute path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
+                  </BrowserRouter> :
+                  <Loading/>
                 }}
               </FirebaseAuthConsumer>
             </FirebaseDatabaseProvider>
