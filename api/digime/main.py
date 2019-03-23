@@ -27,6 +27,7 @@ def __sync_digime(request):
     user = __get_user_by_id(id)
     if not user:
         return 'No user found', 404
+    __add_user_recent_activities(USERS.child(id), file_index)
     goal_list = user['usergoals']
     for key, goal in goal_list.items():
         cat = goal['category']
@@ -65,9 +66,33 @@ def __sync_digime(request):
         goal_ratio = 1 if goal_completed else total / goal_total
         user['usergoals'][key]['totalCompleted'] = goal_ratio
         user['usergoals'][key]['isComplete'] = goal_completed
+
     USERS.child(id).update(user)
     # TODO update user object and post it
     return flask.jsonify({"success": True})
+
+
+def __add_user_recent_activities(user, file_index):
+    all_files = ['demo1.json', 'demo2.json', 'demo3.json']
+    file = all_files[file_index]
+    activities_ref = user.child('useractivities')
+    activities_ref.delete()
+    try:
+        with open(os.path.join('data', file), encoding='utf-8') as f:
+            data = json.load(f)
+            if data['fileDescriptor']['serviceName'] == 'fitbit':
+                for file_data in data['fileData']:
+                    ts = int(file_data["createddate"])
+                    activity = {}
+                    activity['date'] = ts  # .strftime('%Y-%m-%d %H:%M:%S')
+                    activity['category'] = file_data["activityname"]
+                    activity['calories'] = file_data["calories"]
+                    activity['distance'] = file_data["distance"]
+                    # test
+                    activities_ref.push(activity)
+    except Exception as e:
+        print(str(e))
+        pass
 
 
 def digime(request):
