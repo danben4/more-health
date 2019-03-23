@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
 import GoalPage from "./pages/GoalPage/GoalPage";
+import ActivitiesPage from "./pages/ActivitiesPage/ActivitiesPage"
 
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
@@ -31,6 +32,7 @@ class Router extends Component {
                   <div className="root">  
                     <RedirectRoute path="/" component={LoginPage} />
                     <Route path="/login" component={LoginPage}/>
+                    <PrivateRoute path="/activities/" component={ActivitiesPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                     <PrivateRoute path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                     <PrivateRoute path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                     <PrivateRoute path="/goal/" component={GoalPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
