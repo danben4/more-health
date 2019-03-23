@@ -6,7 +6,7 @@ import './Goal.css';
 const Goals = ({goals}) => {
   return Object.keys(goals).map(
     key =>
-      <Goal key={key} goal={goals[key]} />
+      <Goal key={key} goal={goals[key]} isCompanyGoal={false} />
   );
 };
 
