@@ -18,29 +18,27 @@ import PrivateRouter from './components/PrivateRoute';
 class Router extends Component {
   render() {
     return (
-      <>
-        <Header />
-        <div className="root">
-          <FirebaseAuthProvider {...config} firebase={firebase}>
-            <FirebaseDatabaseProvider {...config} firebase={firebase}>
-              <FirebaseAuthConsumer>
-                {({ isSignedIn, user }) => {
-                  return isSignedIn ? 
-                    <BrowserRouter>
-                      <Route path="/" exact component={LoginPage} />
-                      <Route path="/login" component={LoginPage}/>
-                      <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
-                      <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
-                    </BrowserRouter> :
-                    <BrowserRouter>
-                      <Route path="/login" component={LoginPage}/>
-                    </BrowserRouter>
-                }}
-              </FirebaseAuthConsumer>
-            </FirebaseDatabaseProvider>
-          </FirebaseAuthProvider>
-        </div>
-      </>
+      <FirebaseAuthProvider {...config} firebase={firebase}>
+        <FirebaseDatabaseProvider {...config} firebase={firebase}>
+          <FirebaseAuthConsumer>
+            {({ isSignedIn, user }) => {
+              return isSignedIn ? 
+                <BrowserRouter>
+                  <Header />
+                  <div className="root">
+                    <Route path="/" exact component={LoginPage} />
+                    <Route path="/login" component={LoginPage}/>
+                    <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
+                    <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
+                  </div>
+                </BrowserRouter> :
+                <BrowserRouter>
+                  <Route path="/login" component={LoginPage}/>
+                </BrowserRouter>
+            }}
+          </FirebaseAuthConsumer>
+        </FirebaseDatabaseProvider>
+      </FirebaseAuthProvider>
     );
   }
 }
