@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@react-firebase/auth": "0.2.9",
+    "@react-firebase/database": "0.3.10",
     "firebase": "5.9.1",
     "react": "16.8.5",
     "react-dom": "16.8.5",

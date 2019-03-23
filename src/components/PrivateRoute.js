@@ -2,14 +2,14 @@ import React from 'react';
 import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = (props) => {
-  const {path, component: Component, isSignedIn} = props;
+  const { path, component: Component, isSignedIn, userId } = props;
   return (
     <Route
       path={path}
       exact
       render={props =>
         isSignedIn ? (
-          <Component />
+          <Component userId={userId} />
         ) : (
           <Redirect
             to={{
