@@ -16,18 +16,16 @@ class OverviewPage extends Component {
           userId ?
           <FirebaseDatabaseNode path={"users/" + userId}>
             {data => {
+              if (data.isLoading) return <Loading />;
+              if (! data.value) return <EmptyResponse text="No goals!" />;
               return (
-                data.isLoading ?
-                  <Loading /> :
-                  ! data.value ?
-                    <EmptyResponse text="No active goals!" /> :
-                    <>
-                      <Heading text="Active goals" />
-                      <Goals goals={data.value.usergoals} />
-                      <Seperator />
-                      <Heading text="Completed goals" />
-                      <Goals goals={data.value.usergoals} />
-                    </>
+                <>
+                  <Heading text="Active goals" />
+                  <Goals goals={data.value.usergoals} />
+                  <Seperator />
+                  <Heading text="Completed goals" />
+                  <Goals goals={data.value.usergoals} />
+                </>
               );
             }}
           </FirebaseDatabaseNode> :
