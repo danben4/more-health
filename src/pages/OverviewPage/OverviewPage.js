@@ -7,6 +7,14 @@ import EmptyResponse from '../../components/EmptyResponse';
 import Goals from '../../components/Goals';
 import Seperator from '../../components/Seperator';
 
+/*
+const filterActiveGoals = (goals) => "TODO";
+
+const filterCompletedGoals = (goals) => "TODO";
+
+const filterInCompletedGoals = (goals) => "TODO";
+*/
+
 class OverviewPage extends Component {
   render() {
     const { userId } = this.props;
@@ -20,10 +28,10 @@ class OverviewPage extends Component {
               if (! data.value) return <EmptyResponse text="No goals!" />;
               return (
                 <>
-                  <Heading text="Active goals" />
+                  <Heading text="Active Goals" />
                   <Goals goals={data.value.usergoals} />
                   <Seperator />
-                  <Heading text="Completed goals" />
+                  <Heading text="Completed Goals" />
                   <Goals goals={data.value.usergoals} />
                 </>
               );
