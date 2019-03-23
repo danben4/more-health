@@ -12,6 +12,5 @@ def catch_all(path=''):
     flask.request.path = '/' + path
     return digime_data(flask.request)
 
-
 if __name__ == '__main__':
     app.run()
