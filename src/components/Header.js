@@ -7,16 +7,12 @@ const Header = () => {
   return (
     <div className="header">
       <div className="innerHeader">
-        <div className="headerBrandName">More health</div>
+        <Link to="/overview/" className="headerBrandName">More health</Link>
         <div className="headerLinks">
           <Link to="/activities/" className="headerLink">Activities</Link>
-          <Link to="/goals/">All goals</Link>
-          <Link to="/overview/">My goals</Link>
-          <Link to="/settings/">Settings</Link>
-          <span className="headerLink">Activities</span>
-          <span className="headerLink">All goals</span>
-          <span className="headerLink">My goals</span>
-          <span className="headerLink">Settings</span>
+          <Link to="/goals/" className="headerLink">All goals</Link>
+          <Link to="/overview/" className="headerLink">My goals</Link>
+          <Link to="/settings/" className="headerLink">Settings</Link>
         </div>
       </div>
     </div>
