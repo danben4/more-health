@@ -11,6 +11,7 @@ import { config } from "./firebaseConfig";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
+import GoalsPage from "./pages/GoalsPage/GoalsPage";
 
 import Header from './components/Header';
 import PrivateRouter from './components/PrivateRoute';
@@ -31,6 +32,7 @@ class Router extends Component {
                       <Route path="/" exact component={HomePage} />
                       <RedirectRoute path="/login" component={LoginPage} isSignedIn />
                       <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn userId={user ? user.uid : null} />
+                      <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn userId={user ? user.uid : null} />
                     </BrowserRouter>
                   </>
                 );
