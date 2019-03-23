@@ -31,8 +31,8 @@ def __sync_digime(request):
     goal_list = user['usergoals']
     for key, goal in goal_list.items():
         cat = goal['category']
-        goal_start = datetime.strptime(goal['startDate'], '%Y-%m-%d')
-        goal_end = datetime.strptime(goal['endDate'], '%Y-%m-%d')
+        goal_start = goal['startDate']
+        goal_end = goal['endDate']
         increment = run_cat_name if cat == 'Run' else count_cat_name
         root = 'data'
         total = 0
@@ -48,8 +48,8 @@ def __sync_digime(request):
                 if data['fileDescriptor']['serviceName'] == 'fitbit':
                     for file_data in data['fileData']:
                         ts = int(file_data["createddate"] / 1000)
-                        stamp = datetime.utcfromtimestamp(ts)  # .strftime('%Y-%m-%d %H:%M:%S')
-                        if goal_start <= stamp <= goal_end:
+                        # stamp = datetime.utcfromtimestamp(ts)  # .strftime('%Y-%m-%d %H:%M:%S')
+                        if goal_start <= ts <= goal_end:
                             activity_name = file_data["activityname"]
                             # Found activity that matches the current goal
                             steps = file_data["steps"]
