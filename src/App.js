@@ -14,7 +14,6 @@ import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
 import Loading from "./components/Loading"
 
-import Header from './components/Header';
 import PrivateRouter from './components/PrivateRoute';
 import RedirectRoute from './components/RedirectRoute';
 
