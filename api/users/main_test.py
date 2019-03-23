@@ -1,6 +1,5 @@
 import flask
 from main import users
-import os
 
 
 app = flask.Flask('functions')
@@ -8,8 +7,9 @@ methods = ['GET', 'POST', 'PUT', 'DELETE']
 
 @app.route('/users', methods=methods)
 @app.route('/users/<path>', methods=methods)
-def catch_all(path=''):
-    p = os.environ
+@app.route('/users/<path>/usergoals', methods=methods)
+@app.route('/users/<path>/usergoals/<goalid>', methods=methods)
+def catch_all(path='', goalid=''):
     flask.request.path = '/' + path
     return users(flask.request)
 
