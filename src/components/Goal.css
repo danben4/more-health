@@ -25,11 +25,11 @@
 }
 
 .goal:nth-child(even) .goalContent {
-  margin-right: -80px;
+  margin-right: -60px;
 }
 
 .goal:nth-child(odd) .goalContent {
-  margin-left: -80px;
+  margin-left: -60px;
 }
 
 .activateButton {
@@ -83,7 +83,7 @@
 }
 
 .goalImage {
-  width: 30%;
+  width: 40%;
   height: auto;
   border-radius: 5px;
   transition: all 0.4s;
