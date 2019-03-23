@@ -12,6 +12,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 
+import Header from './components/Header';
 import PrivateRouter from './components/PrivateRoute';
 import RedirectRoute from './components/RedirectRoute';
 
@@ -24,11 +25,14 @@ class Router extends Component {
             <FirebaseAuthConsumer>
               {({ isSignedIn, user }) => {
                 return (
-                  <BrowserRouter>
-                    <Route path="/" exact component={HomePage} />
-                    <RedirectRoute path="/login" component={LoginPage} isSignedIn />
-                    <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn userId={user ? user.uid : null} />
-                  </BrowserRouter>
+                  <>
+                    <Header />
+                    <BrowserRouter>
+                      <Route path="/" exact component={HomePage} />
+                      <RedirectRoute path="/login" component={LoginPage} isSignedIn />
+                      <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn userId={user ? user.uid : null} />
+                    </BrowserRouter>
+                  </>
                 );
               }}
             </FirebaseAuthConsumer>
