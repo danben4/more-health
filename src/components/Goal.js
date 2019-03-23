@@ -1,12 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import Progress from './Progress';
 import './Goal.css';
 
 const Goal = ({goal, isCompanyGoal}) => {
-  console.log("isCompanyGoal", isCompanyGoal)
   return (
-    <div className="goal">
+    <Link to={"/goal?id=" + goal.id} className="goal">
       <div  className="goalContent">
         <div className="goalRightContent">
           <div className="goalName">{goal.name}</div>
@@ -22,7 +22,7 @@ const Goal = ({goal, isCompanyGoal}) => {
         </div>
       </div>
       <img alt="" src={goal.imageUrl} className="goalImage" /> :
-    </div>
+    </Link>
   )
 };
 
