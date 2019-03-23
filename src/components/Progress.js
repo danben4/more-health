@@ -3,9 +3,9 @@ import React from 'react';
 import './Progress.css';
 
 const getBarColor = (totalCompleted) => {
-  if (totalCompleted > 0.8) return "green";
-  if (totalCompleted > 0.4) return "yellow";
-  return "red";
+  if (totalCompleted > 0.8) return "#7dbd32";
+  if (totalCompleted > 0.4) return "#efc030";
+  return "#ed344e";
 };
 
 const Progress = ({totalCompleted}) => {
@@ -18,7 +18,7 @@ const Progress = ({totalCompleted}) => {
           backgroundColor: getBarColor(totalCompleted)
         }}
       />
-      <span className="number">{totalCompleted * 100}%</span>
+      <span className="number">{totalCompleted * 100}% completed!</span>
     </div>
   )
 };
