@@ -4,6 +4,7 @@ import { FirebaseDatabaseNode } from "@react-firebase/database";
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
+import Goals from '../../components/Goals';
 
 class OverviewPage extends Component {
   render() {
@@ -21,7 +22,7 @@ class OverviewPage extends Component {
                   <Loading /> :
                   ! data.value ?
                     <EmptyResponse text="No active goals!" /> :
-                    <div />
+                    <Goals goals={data.value.usergoals} />
               );
             }}
           </FirebaseDatabaseNode> :
