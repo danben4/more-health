@@ -3,7 +3,7 @@ import React from 'react';
 import Progress from './Progress';
 import './Goal.css';
 
-const Goal = ({goal}) => {
+const Goal = ({goal, isCompanyGoal}) => {
   return (
     <div className="goal">
       <div  className="goalContent">

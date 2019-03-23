@@ -5,8 +5,10 @@ import './Company.css';
 
 const Company = ({company}) => {
   return (
+
     <div className="company">
-      <CompanyGoals goals={company.goals} />
+      <div className="companyName">{company.name}</div>
+      <CompanyGoals goals={company.goals}/>
     </div>
   )
 };
