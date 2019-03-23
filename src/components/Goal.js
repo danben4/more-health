@@ -4,7 +4,6 @@ import Progress from './Progress';
 import './Goal.css';
 
 const Goal = ({goal, isCompanyGoal}) => {
-  console.log("isCompanyGoal", isCompanyGoal)
   return (
     <div className="goal">
       <div  className="goalContent">
