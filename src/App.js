@@ -12,6 +12,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
+import Loading from "./components/Loading"
 
 import Header from './components/Header';
 import PrivateRouter from './components/PrivateRoute';
@@ -25,17 +26,16 @@ class Router extends Component {
           <FirebaseDatabaseProvider {...config} firebase={firebase}>
             <FirebaseAuthConsumer>
               {({ isSignedIn, user }) => {
-                return (
+                return isSignedIn ? 
                   <>
-                    <Header />
                     <BrowserRouter>
                       <Route path="/" exact component={HomePage} />
                       <RedirectRoute path="/login" component={LoginPage} isSignedIn={isSignedIn} />
                       <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                       <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                     </BrowserRouter>
-                  </>
-                );
+                  </> : 
+                  <Loading/>
               }}
             </FirebaseAuthConsumer>
           </FirebaseDatabaseProvider>
