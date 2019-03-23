@@ -35,7 +35,8 @@ const SingleGoal = ({goalId, goal, userId}) => {
                           isComplete: 0,
                           name: goal.name,
                           startDate: today,
-                          totalCompleted: 0.0
+                          totalCompleted: 0.0,
+                          category: goal.category,
                         })
                       }}
                     >
