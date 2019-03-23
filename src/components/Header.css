@@ -20,3 +20,13 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+.headerLinks {
+  color: #fff;
+}
+
+.headerLink {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}

@@ -7,8 +7,11 @@ const Header = () => {
     <div className="header">
       <div className="innerHeader">
         <div className="headerBrandName">More health</div>
-        <div>
-          TODO
+        <div className="headerLinks">
+          <span className="headerLink">Activities</span>
+          <span className="headerLink">All goals</span>
+          <span className="headerLink">My goals</span>
+          <span className="headerLink">Settings</span>
         </div>
       </div>
     </div>
