@@ -1,0 +1,10 @@
+.heading {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #36072e;
+  font-size: 48px;
+  text-decoration: underline;
+  margin-bottom: 30px;
+}

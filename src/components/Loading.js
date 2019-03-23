@@ -1,8 +1,14 @@
 import React from 'react';
 
+import './Loading.css';
+
 const Loading = () => {
   return (
-    <div>Loading..</div>
+    <div className="bubbles">
+      <span className="bubble bubble1" />
+      <span className="bubble bubble2" />
+      <span className="bubble bubble3" />
+    </div>
   )
 };
 
