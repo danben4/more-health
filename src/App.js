@@ -1,50 +1,38 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import {
-  FirebaseAuthProvider,
-  FirebaseAuthConsumer
-} from "@react-firebase/auth";
-import { config } from "./firebaseConfig";
-import './App.css';
+import { FirebaseAuthProvider, FirebaseAuthConsumer } from "@react-firebase/auth";
 
+import { config } from "./firebaseConfig";
+
+import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 
-class App extends Component {
+import PrivateRouter from './components/PrivateRoute';
+import RedirectRoute from './components/RedirectRoute';
+
+class Router extends Component {
   render() {
     return (
-      <FirebaseAuthProvider {...config} firebase={firebase}>
-        <BrowserRouter>
-          <Route path="/" exact component={LoginPage} />
-          <Route path="/overview/" component={OverviewPage} />
-          <Link to="/">Login Page</Link>
-          <Link to="/overview/">Overview Page</Link>
-        </BrowserRouter>
-        <div className="root">
-          <button
-            onClick={() => {
-              const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-              firebase.auth().signInWithPopup(googleAuthProvider);
-            }}
-          >
-            Sign In with Google
-          </button>
-          <div>Inside FirebaseAuthProvider</div>
+      <div className="root">
+        <FirebaseAuthProvider {...config} firebase={firebase}>
           <FirebaseAuthConsumer>
             {({ isSignedIn }) => {
-              if (isSignedIn === true) {
-                return "Signed in";
-              } else {
-                return "Not signed in";
-              }
+              return (
+                <BrowserRouter>
+                  <Route path="/" exact component={HomePage} />
+                  <RedirectRoute path="/login" exact component={LoginPage} isSignedIn />
+                  <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn />
+                </BrowserRouter>
+              );
             }}
           </FirebaseAuthConsumer>
-        </div>
-      </FirebaseAuthProvider>
+        </FirebaseAuthProvider>
+      </div>
     );
   }
 }
 
-export default App;
+export default Router;
