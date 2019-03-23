@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import { FirebaseAuthProvider, FirebaseAuthConsumer } from "@react-firebase/auth";
 
-class App extends Component {
+import { config } from "./firebaseConfig";
+
+import HomePage from "./pages/HomePage/HomePage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import OverviewPage from "./pages/OverviewPage/OverviewPage";
+
+import PrivateRouter from './components/PrivateRoute';
+import RedirectRoute from './components/RedirectRoute';
+
+class Router extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="root">
+        <FirebaseAuthProvider {...config} firebase={firebase}>
+          <FirebaseAuthConsumer>
+            {({ isSignedIn }) => {
+              return (
+                <BrowserRouter>
+                  <Route path="/" exact component={HomePage} />
+                  <RedirectRoute path="/login" component={LoginPage} isSignedIn />
+                  <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn />
+                </BrowserRouter>
+              );
+            }}
+          </FirebaseAuthConsumer>
+        </FirebaseAuthProvider>
       </div>
     );
   }
 }
 
-export default App;
+export default Router;
