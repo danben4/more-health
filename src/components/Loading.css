@@ -1,0 +1,37 @@
+@keyframes bubble {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.bubbles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 100%;
+}
+
+.bubble {
+  display: inline-block;
+  animation: bubble 500ms linear 0ms infinite alternate backwards;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #36072e;
+}
+
+.bubble1 {
+  animation-delay: 0ms;
+}
+
+.bubble2 {
+  animation-delay: 330ms;
+}
+
+.bubble3 {
+  animation-delay: 660ms;
+}
