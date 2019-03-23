@@ -7,9 +7,9 @@ import SingleGoal from '../../components/SingleGoal';
 
 class GoalPage extends Component {
   render() {
-    const params = new URLSearchParams(this.props.location.search);
+    const { location, userId } = this.props;
+    const params = new URLSearchParams(location.search);
     const goalId = params.get("id");
-    console.log("goalId", goalId);
     return (
       <FirebaseDatabaseNode path={"goals/" + goalId}>
         {data => {
@@ -18,7 +18,7 @@ class GoalPage extends Component {
           return (
             <>
               <Heading text={goal.name} />
-              <SingleGoal goal={goal} />
+              <SingleGoal goalId={goalId} goal={goal} userId={userId} />
             </>
           );
         }}
