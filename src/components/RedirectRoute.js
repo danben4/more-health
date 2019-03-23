@@ -6,6 +6,7 @@ const RedirectRoute = (props) => {
   return (
     <Route
       path={path}
+      exact
       render={props =>
         isSignedIn ? (
           <Redirect

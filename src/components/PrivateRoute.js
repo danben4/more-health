@@ -6,6 +6,7 @@ const PrivateRoute = (props) => {
   return (
     <Route
       path={path}
+      exact
       render={props =>
         isSignedIn ? (
           <Component />

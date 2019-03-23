@@ -23,7 +23,7 @@ class Router extends Component {
               return (
                 <BrowserRouter>
                   <Route path="/" exact component={HomePage} />
-                  <RedirectRoute path="/login" exact component={LoginPage} isSignedIn />
+                  <RedirectRoute path="/login" component={LoginPage} isSignedIn />
                   <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn />
                 </BrowserRouter>
               );
