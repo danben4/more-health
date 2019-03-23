@@ -16,7 +16,7 @@ const Goal = ({goal, isCompanyGoal}) => {
           <div className="goalCompany">{goal.companyName}</div>
           {
           isCompanyGoal ? 
-          <div className="activateButton">Activate</div> :
+          <div></div> :
           <div className="goalProgress"><Progress totalCompleted={goal.totalCompleted} /></div>
           }
         </div>
