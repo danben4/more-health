@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FirebaseDatabaseNode } from "@react-firebase/database";
 
+import Page from '../../components/Page';
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
@@ -15,7 +16,7 @@ class GoalsPage extends Component {
   render() {
     const { userId } = this.props;
     return (
-      <>
+      <Page>
         <Heading text="Available goals" />
         {
           userId ?
@@ -31,7 +32,7 @@ class GoalsPage extends Component {
           </FirebaseDatabaseNode> :
           <Loading />
         }
-      </>
+      </Page>
     );
   }
 }

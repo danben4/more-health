@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import * as firebase from "firebase/app";
 
+import Page from '../../components/Page';
+
 class LoginPage extends Component {
   render() {
     return (
-      <div>
+      <Page>
         Login Page!
         <button
           onClick={() => {
@@ -14,7 +16,7 @@ class LoginPage extends Component {
           >
             Sign In with Google
         </button>
-      </div>
+      </Page>
     );
   }
 }

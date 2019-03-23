@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FirebaseDatabaseNode } from "@react-firebase/database";
 
+import Page from '../../components/Page';
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
@@ -22,7 +23,7 @@ class OverviewPage extends Component {
   render() {
     const { userId } = this.props;
     return (
-      <>
+      <Page>
         {
           userId ?
           <FirebaseDatabaseNode path={"users/" + userId}>
@@ -52,7 +53,7 @@ class OverviewPage extends Component {
           </FirebaseDatabaseNode> :
           <Loading />
         }
-      </>
+      </Page>
     );
   }
 }
