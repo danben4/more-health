@@ -9,8 +9,10 @@ import Seperator from '../../components/Seperator';
 
 const filterActiveGoals = (goals) =>
   Object.keys(goals).map(
-    key => {return {key, ...goals[key]}}
-  ).filter(goal => new Date() < new Date(goal.endDate));
+    key => {return {id: key, ...goals[key]}}
+  ).filter(goal => {
+    return new Date() < new Date(goal.endDate * 1000);
+  });
 
 const filterCompletedGoals = (activeGoals) => activeGoals.filter(goal => goal.totalCompleted >= 1);
 
@@ -20,7 +22,7 @@ class OverviewPage extends Component {
   render() {
     const { userId } = this.props;
     return (
-      <div>
+      <>
         {
           userId ?
           <FirebaseDatabaseNode path={"users/" + userId}>
@@ -50,7 +52,7 @@ class OverviewPage extends Component {
           </FirebaseDatabaseNode> :
           <Loading />
         }
-      </div>
+      </>
     );
   }
 }

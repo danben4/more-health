@@ -1,0 +1,17 @@
+.singleGoal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.singleGoalDescription {
+  font-size: 18px;
+  margin-right: 30px;
+  width: 100%;
+}
+
+.singleGoalImage {
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+}

@@ -1,0 +1,21 @@
+.button {
+  font-family: inherit;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 22px;
+  font-weight: 500;
+
+  background-color: rgba(26, 35, 126, 0.9);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  transition: all 0.4s;
+}
+
+.button:hover {
+  background-color: rgba(26, 35, 126, 1);
+}
