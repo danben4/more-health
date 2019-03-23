@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from "react-router-dom";
 import * as firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/database";
 import { FirebaseAuthProvider, FirebaseAuthConsumer } from "@react-firebase/auth";
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
 
 import { config } from "./firebaseConfig";
 
@@ -18,17 +20,19 @@ class Router extends Component {
     return (
       <div className="root">
         <FirebaseAuthProvider {...config} firebase={firebase}>
-          <FirebaseAuthConsumer>
-            {({ isSignedIn }) => {
-              return (
-                <BrowserRouter>
-                  <Route path="/" exact component={HomePage} />
-                  <RedirectRoute path="/login" component={LoginPage} isSignedIn />
-                  <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn />
-                </BrowserRouter>
-              );
-            }}
-          </FirebaseAuthConsumer>
+          <FirebaseDatabaseProvider {...config} firebase={firebase}>
+            <FirebaseAuthConsumer>
+              {({ isSignedIn, user }) => {
+                return (
+                  <BrowserRouter>
+                    <Route path="/" exact component={HomePage} />
+                    <RedirectRoute path="/login" component={LoginPage} isSignedIn />
+                    <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn userId={user ? user.uid : null} />
+                  </BrowserRouter>
+                );
+              }}
+            </FirebaseAuthConsumer>
+          </FirebaseDatabaseProvider>
         </FirebaseAuthProvider>
       </div>
     );
