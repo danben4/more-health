@@ -4,26 +4,26 @@ import { FirebaseDatabaseNode } from "@react-firebase/database";
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
-import Company from '../../components/Company';
+import Goal from '../../components/Goal';
 
 class GoalsPage extends Component {
   render() {
     const { userId } = this.props;
     return (
       <div>
-        <Heading text="All goals" />
+        <Heading text="Available goals" />
         {
           userId ?
-          <FirebaseDatabaseNode path={"companies"}>
+          <FirebaseDatabaseNode path={"goals"}>
             {({value, isLoading}) => {
               return (
                 isLoading ? 
                 <Loading /> :
                   ! value ?
-                    <EmptyResponse text="No active goals!" /> :
+                    <EmptyResponse text="No active goals!" /> : 
                     Object.keys(value).map(
-                      key =>
-                        <Company key={key} company={value[key]} />
+                      key => {
+                        return <Goal key={key} goal={value[key]} isCompanyGoal ={true} /> }
                     )
               );
             }}
