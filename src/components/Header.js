@@ -12,7 +12,6 @@ const Header = () => {
           <Link to="/activities/" className="headerLink">Activities</Link>
           <Link to="/goals/" className="headerLink">All goals</Link>
           <Link to="/overview/" className="headerLink">My goals</Link>
-          <Link to="/settings/" className="headerLink">Settings</Link>
         </div>
       </div>
     </div>
