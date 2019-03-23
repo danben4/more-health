@@ -9,7 +9,7 @@ import Seperator from '../../components/Seperator';
 
 const filterActiveGoals = (goals) =>
   Object.keys(goals).map(
-    key => {return {key, ...goals[key]}}
+    key => {return {id: key, ...goals[key]}}
   ).filter(goal => new Date() < new Date(goal.endDate));
 
 const filterCompletedGoals = (activeGoals) => activeGoals.filter(goal => goal.totalCompleted >= 1);
