@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import {
@@ -8,10 +9,19 @@ import {
 import { config } from "./firebaseConfig";
 import './App.css';
 
+import LoginPage from "./pages/LoginPage/LoginPage";
+import OverviewPage from "./pages/OverviewPage/OverviewPage";
+
 class App extends Component {
   render() {
     return (
       <FirebaseAuthProvider {...config} firebase={firebase}>
+        <BrowserRouter>
+          <Route path="/" exact component={LoginPage} />
+          <Route path="/overview/" component={OverviewPage} />
+          <Link to="/">Login Page</Link>
+          <Link to="/overview/">Overview Page</Link>
+        </BrowserRouter>
         <div className="root">
           <button
             onClick={() => {
