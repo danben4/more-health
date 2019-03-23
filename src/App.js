@@ -30,9 +30,9 @@ class Router extends Component {
                     <Header />
                     <BrowserRouter>
                       <Route path="/" exact component={HomePage} />
-                      <RedirectRoute path="/login" component={LoginPage} isSignedIn />
-                      <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn userId={user ? user.uid : null} />
-                      <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn userId={user ? user.uid : null} />
+                      <RedirectRoute path="/login" component={LoginPage} isSignedIn={isSignedIn} />
+                      <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
+                      <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                     </BrowserRouter>
                   </>
                 );
