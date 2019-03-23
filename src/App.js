@@ -14,32 +14,34 @@ import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
 import Loading from "./components/Loading"
 
+import Header from './components/Header';
 import PrivateRouter from './components/PrivateRoute';
 import RedirectRoute from './components/RedirectRoute';
 
 class Router extends Component {
   render() {
     return (
-      <div className="root">
-        <FirebaseAuthProvider {...config} firebase={firebase}>
-          <FirebaseDatabaseProvider {...config} firebase={firebase}>
-            <FirebaseAuthConsumer>
-              {({ isSignedIn, user }) => {
-                return isSignedIn ? 
-                  <>
+      <>
+        <Header />
+        <div className="root">
+          <FirebaseAuthProvider {...config} firebase={firebase}>
+            <FirebaseDatabaseProvider {...config} firebase={firebase}>
+              <FirebaseAuthConsumer>
+                {({ isSignedIn, user }) => {
+                  return isSignedIn ? 
                     <BrowserRouter>
                       <Route path="/" exact component={HomePage} />
                       <RedirectRoute path="/login" component={LoginPage} isSignedIn={isSignedIn} />
                       <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                       <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
-                    </BrowserRouter>
-                  </> : 
-                  <Loading/>
-              }}
-            </FirebaseAuthConsumer>
-          </FirebaseDatabaseProvider>
-        </FirebaseAuthProvider>
-      </div>
+                    </BrowserRouter> : 
+                    <Loading/>
+                }}
+              </FirebaseAuthConsumer>
+            </FirebaseDatabaseProvider>
+          </FirebaseAuthProvider>
+        </div>
+      </>
     );
   }
 }
