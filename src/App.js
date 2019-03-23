@@ -13,6 +13,14 @@ class App extends Component {
     return (
       <FirebaseAuthProvider {...config} firebase={firebase}>
         <div className="root">
+          <button
+            onClick={() => {
+              const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+              firebase.auth().signInWithPopup(googleAuthProvider);
+            }}
+          >
+            Sign In with Google
+          </button>
           <div>Inside FirebaseAuthProvider</div>
           <FirebaseAuthConsumer>
             {({ isSignedIn }) => {
