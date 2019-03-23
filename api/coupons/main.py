@@ -66,8 +66,6 @@ def coupons(request):
             return delete_coupon(id)
         elif request.method == 'PUT':
             return update_coupon(id, request)
-        elif request.method == 'PUSH':
-            return create_coupon(request)    
         else:
             return 'Method not supported', 405
     return 'URL not found', 404
