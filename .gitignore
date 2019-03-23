@@ -27,3 +27,6 @@ firebaseConfig.js
 
 # python
 __pycache__
+
+# IDE
+.idea
