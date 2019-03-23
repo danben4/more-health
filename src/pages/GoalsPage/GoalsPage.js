@@ -15,7 +15,7 @@ class GoalsPage extends Component {
   render() {
     const { userId } = this.props;
     return (
-      <div>
+      <>
         <Heading text="Available goals" />
         {
           userId ?
@@ -31,7 +31,7 @@ class GoalsPage extends Component {
           </FirebaseDatabaseNode> :
           <Loading />
         }
-      </div>
+      </>
     );
   }
 }
