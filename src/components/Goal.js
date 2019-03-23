@@ -4,6 +4,7 @@ import Progress from './Progress';
 import './Goal.css';
 
 const Goal = ({goal, isCompanyGoal}) => {
+  console.log("isCompanyGoal", isCompanyGoal)
   return (
     <div className="goal">
       <div  className="goalContent">
@@ -13,10 +14,14 @@ const Goal = ({goal, isCompanyGoal}) => {
         </div>
         <div className="goalLeftContent">
           <div className="goalCompany">{goal.companyName}</div>
+          {
+          isCompanyGoal ? 
+          <div className="activateButton">Activate</div> :
           <div className="goalProgress"><Progress totalCompleted={goal.totalCompleted} /></div>
+          }
         </div>
       </div>
-      <img alt="" src={goal.imageUrl} className="goalImage" />
+      <img alt="" src={goal.imageUrl} className="goalImage" /> :
     </div>
   )
 };

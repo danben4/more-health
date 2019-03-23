@@ -8,15 +8,12 @@ import { FirebaseDatabaseProvider } from "@react-firebase/database";
 
 import { config } from "./firebaseConfig";
 
-import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
-import Loading from "./components/Loading"
 
 import Header from './components/Header';
 import PrivateRouter from './components/PrivateRoute';
-import RedirectRoute from './components/RedirectRoute';
 
 class Router extends Component {
   render() {
@@ -30,12 +27,14 @@ class Router extends Component {
                 {({ isSignedIn, user }) => {
                   return isSignedIn ? 
                     <BrowserRouter>
-                      <Route path="/" exact component={HomePage} />
-                      <RedirectRoute path="/login" component={LoginPage} isSignedIn={isSignedIn} />
+                      <Route path="/" exact component={LoginPage} />
+                      <Route path="/login" component={LoginPage}/>
                       <PrivateRouter path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                       <PrivateRouter path="/goals/" component={GoalsPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
-                    </BrowserRouter> : 
-                    <Loading/>
+                    </BrowserRouter> :
+                    <BrowserRouter>
+                      <Route path="/login" component={LoginPage}/>
+                    </BrowserRouter>
                 }}
               </FirebaseAuthConsumer>
             </FirebaseDatabaseProvider>
