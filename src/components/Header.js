@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import './Header.css';
 
 const Header = (user) => {
-  console.log(user)
   return (
     <div className="header">
       <div className="innerHeader">

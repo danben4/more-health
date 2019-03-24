@@ -23,7 +23,10 @@ class ActivitiesPage extends Component {
       <Page className="homePage">
         {
           userId ?
-          <FirebaseDatabaseNode path={"users/" + userId}>
+          <FirebaseDatabaseNode
+            path={"users/" + userId}
+            orderByValue="date"
+          >
             {data => {
               if (data.isLoading) return <Loading />;
               if (! data.value || ! data.value.useractivities) return <EmptyResponse text="No activites!" />;
