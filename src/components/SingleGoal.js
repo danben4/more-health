@@ -13,40 +13,50 @@ const SingleGoal = ({goalId, goal, userId}) => {
       {data => {
         console.log("data", data);
         return (
-          <>
-            <div className="singleGoal">
-              <div className="singleGoalDescription">{goal.description}</div>
-              <img alt="" src={goal.imageUrl} className="singleGoalImage" /> :
-            </div>
-            {
-              ! data.value ?
-                <FirebaseDatabaseMutation
-                  type="set"
-                  path={"users/" + userId + "/usergoals/" + goalId}
-                >
-                  {({ runMutation }) => (
-                    <Button
-                      onClick={() => {
-                        runMutation({
-                          companyName: goal.companyName,
-                          description: goal.description,
-                          endDate: endDate,
-                          imageUrl: goal.imageUrl,
-                          isComplete: 0,
-                          name: goal.name,
-                          startDate: today,
-                          totalCompleted: 0.0,
-                          category: goal.category,
-                        })
-                      }}
+          <div className="singleGoal">
+            <img alt="" src={goal.imageUrl} className="singleGoalImage" />
+            <div className="singleGoalContent">
+              <div className="singleGoalInnerContent">
+                <div className="singleGoalName">
+                  <span>{goal.name}</span>
+                  <span>{goal.companyName}</span>
+                </div>
+                <div className="singleGoalDescription">{goal.description}</div>
+                {
+                  ! data.value ?
+                    <FirebaseDatabaseMutation
+                      type="set"
+                      path={"users/" + userId + "/usergoals/" + goalId}
                     >
-                      Activate goal!
-                    </Button>
-                  )}
-                </FirebaseDatabaseMutation> :
-                null
-            }
-          </>
+                      {({ runMutation }) => (
+                        <div className="buttonContent">
+                          <Button
+                            onClick={() => {
+                              runMutation({
+                                companyName: goal.companyName,
+                                description: goal.description,
+                                endDate: endDate,
+                                imageUrl: goal.imageUrl,
+                                isComplete: 0,
+                                name: goal.name,
+                                startDate: today,
+                                totalCompleted: 0.0,
+                                category: goal.category,
+                              })
+                            }}
+                          >
+                            Activate goal!
+                          </Button>
+                        </div>
+                      )}
+                    </FirebaseDatabaseMutation> :
+                    <div>
+                      Activated goal!
+                    </div>
+                }
+              </div>
+            </div>
+          </div>
         );
       }}
     </FirebaseDatabaseNode>
