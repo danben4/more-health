@@ -8,16 +8,12 @@ class HomePage extends Component {
     return (
       <div className="homePageRoot">
         <div className="homePageContent">
-          <div className="homePageWrapper">
-            <div className="homePageLogo">More health</div>
-            <div>
-              <div className="homePageHeaderText">
-                Get more out of your workout
-              </div>
-              <div className="homePageHeaderSubText">
-                More health helps you reach your fitness goals while getting great deals at your favourite places!
-              </div>
-            </div>
+          <div className="homePageLogo">M o r e</div>
+          <div className="homePageHeaderText">
+            Get more out of your workout
+          </div>
+          <div className="homePageHeaderSubText">
+            More health helps you reach your fitness goals while getting great deals at your favourite places!
           </div>
           <div className="logInButton">
             <LinkButton to="/overview/">
