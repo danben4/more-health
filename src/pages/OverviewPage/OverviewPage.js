@@ -29,7 +29,7 @@ class OverviewPage extends Component {
           <FirebaseDatabaseNode path={"users/" + userId}>
             {data => {
               if (data.isLoading) return <Loading />;
-              if (! data.value) return <EmptyResponse text="No goals!" />;
+              if (! data.value || ! data.value.usergoals) return <EmptyResponse text="No goals!" />;
               const activeGoals = filterActiveGoals(data.value.usergoals);
               const inCompletedGoals = filterInCompletedGoals(activeGoals);
               const completedGoals = filterCompletedGoals(activeGoals);

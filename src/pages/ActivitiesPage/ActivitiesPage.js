@@ -16,10 +16,6 @@ const filterRecentActivites = (activities) =>
   }
 );
 
-// const filterCompletedGoals = (activities) => activities.filter(activity => activity.endDate >= 1);
-
-// const filterInCompletedGoals = (activities) => activities.filter(activity => activity.endDate < 1);
-
 class ActivitiesPage extends Component {
   render() {
     const { userId } = this.props;
