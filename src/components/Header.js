@@ -11,7 +11,7 @@ const Header = (user) => {
         <div className="headerLinks">
           <Link to="/activities/" className="headerLink">Activities</Link>
           <Link to="/goals/" className="headerLink">All goals</Link>
-          <Link to="/overview/" className="headerLink">{user.userName}</Link>
+          <Link to="/overview/" className="headerLink">Rebecca Charlston</Link>
         </div>
       </div>
     </div>
