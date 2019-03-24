@@ -1,4 +1,6 @@
 .header {
+  position: fixed;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   background-color: #fff;
