@@ -13,13 +13,13 @@
 }
 
 .goal:hover .goalContent {
-  box-shadow: 0 0 0 4px #2e7d32;
+  box-shadow: 0 0 0 4px #f06292;
 }
 
 .goalContent {
   width: 50%;
   display: flex;
-  box-shadow: 0 0 0 1px #2e7d32;
+  box-shadow: 0 0 0 1px #f48fb1;
   padding: 20px;
   background-color: #fff;
   z-index: 1;

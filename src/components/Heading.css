@@ -1,7 +1,8 @@
 .heading {
   margin: 0;
   padding: 0;
-  color: #2e7d32;
+  color: #f48fb1;
   font-size: 68px;
-  margin-bottom: 30px;
+  font-weight: 50;
+  margin-bottom: 30px; 
 }

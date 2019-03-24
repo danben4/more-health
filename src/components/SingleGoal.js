@@ -11,7 +11,7 @@ const SingleGoal = ({goalId, goal, userId}) => {
   return (
     <FirebaseDatabaseNode path={"users/" + userId + "/usergoals/" + goalId}>
       {data => {
-        console.log("data", data);
+        console.log("dataSINGLE", data);
         return (
           <>
             <div className="singleGoal">

@@ -17,7 +17,7 @@ class GoalsPage extends Component {
     const { userId } = this.props;
     return (
       <Page>
-        <Heading text="Available goals" />
+        <Heading text="Available goals for activation" />
         {
           userId ?
           <FirebaseDatabaseNode path={"goals"}>
@@ -35,6 +35,6 @@ class GoalsPage extends Component {
       </Page>
     );
   }
-}
+} 
 
 export default GoalsPage;

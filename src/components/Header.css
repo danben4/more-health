@@ -1,15 +1,16 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: #2e7d32;
+  background-color: #f8bbd0;
   width: 100vw;
+
 }
 
 .innerHeader {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 30px 20px;
+  padding: 10px 20px;
   max-width: 1200px;
 }
 
@@ -19,12 +20,13 @@
   color: inherit;
   text-decoration: none;
   color: #fff;
-  font-size: 32px;
-  font-weight: 750;
+  font-size: 28px;
+  font-weight: 760;
   cursor: pointer;
 }
 
 .headerLinks {
+  padding-top: 5px;
   color: #fff;
 }
 
