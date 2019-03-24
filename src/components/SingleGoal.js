@@ -31,23 +31,32 @@ const SingleGoal = ({goalId, goal, userId}) => {
                       >
                         {({runMutation}) => {
                           return (
-                            <Button
-                              onClick={() => {
-                                runMutation({
-                                  companyName: goal.companyName,
-                                  description: goal.description,
-                                  endDate: endDate,
-                                  imageUrl: goal.imageUrl,
-                                  isComplete: 0,
-                                  name: goal.name,
-                                  startDate: today,
-                                  totalCompleted: 0.0,
-                                  category: goal.category,
-                                })
-                              }}
-                            >
-                              Activate goal!
-                            </Button>
+                            <div className="singleGoalButtons">
+                              <Button
+                                onClick={() => {
+                                  console.log("WAT")
+                                }}
+                              >
+                                Share
+                              </Button>
+                              <Button
+                                onClick={() => {
+                                  runMutation({
+                                    companyName: goal.companyName,
+                                    description: goal.description,
+                                    endDate: endDate,
+                                    imageUrl: goal.imageUrl,
+                                    isComplete: 0,
+                                    name: goal.name,
+                                    startDate: today,
+                                    totalCompleted: 0.0,
+                                    category: goal.category,
+                                  })
+                                }}
+                              >
+                                Activate goal!
+                              </Button>
+                            </div>
                           );
                         }}
                       </FirebaseDatabaseMutation> :
