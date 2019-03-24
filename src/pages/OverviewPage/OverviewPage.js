@@ -8,6 +8,7 @@ import EmptyResponse from '../../components/EmptyResponse';
 import Goals from '../../components/Goals';
 import Seperator from '../../components/Seperator';
 import LinkButton from '../../components/LinkButton';
+import Activities from '../../components/Activities'
 
 const filterActiveGoals = (goals) =>
   Object.keys(goals).map(
@@ -19,6 +20,11 @@ const filterActiveGoals = (goals) =>
 const filterCompletedGoals = (activeGoals) => activeGoals.filter(goal => goal.totalCompleted >= 1);
 
 const filterInCompletedGoals = (activeGoals) => activeGoals.filter(goal => goal.totalCompleted < 1);
+
+const filterRecentActivites = (activities) =>
+  Object.keys(activities).map(
+    key => {return {id: key, ...activities[key]}}
+  ).slice(0, 5);
 
 class OverviewPage extends Component {
   render() {
@@ -56,6 +62,9 @@ class OverviewPage extends Component {
                     <EmptyResponse text="No completed goals!" /> :
                     <Goals goals={completedGoals} isCompanyGoal={false}/>
                   }
+                  <Seperator />
+                  <Heading text="My Activities" />
+                  <Activities activities={filterRecentActivites(data.value.useractivities)}/>
                 </>
               );
             }}
