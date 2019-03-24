@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  z-index: 99999999;
 }
 
 .homePageContent {
