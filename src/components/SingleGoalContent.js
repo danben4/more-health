@@ -5,6 +5,7 @@ import Progress from './Progress';
 import Button from './Button';
 import ShareButton from './ShareButton';
 import './SingleGoalContent.css';
+import RedeemButtonCoupon from './RedeemCouponButton';
 
 class SingleGoalContent extends React.Component {
   render() {
@@ -57,9 +58,13 @@ class SingleGoalContent extends React.Component {
                   </FirebaseDatabaseMutation> :
                   <div className="progressContent">
                     <ShareButton />
-                    <div className="progressBar">
-                      <Progress totalCompleted={data.value.totalCompleted} /> 
-                    </div> 
+                    {
+                      data.value.totalCompleted === 1 ?
+                      <RedeemButtonCoupon/> :
+                      <div className="progressBar">
+                        <Progress totalCompleted={data.value.totalCompleted} /> 
+                      </div> 
+                    }
                   </div>
               }
             </div>

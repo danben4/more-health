@@ -1,0 +1,9 @@
+.filters {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.filters  button {
+  margin-right: 30px;
+}
+
