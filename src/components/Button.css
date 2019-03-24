@@ -1,4 +1,14 @@
+.reset {
+  text-decoration: none;
+  font-family: inherit;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  color: #fff;
+}
+
 .button {
+  text-decoration: none;
   font-family: inherit;
   background: transparent;
   cursor: pointer;
