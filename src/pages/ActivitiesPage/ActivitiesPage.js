@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { FirebaseDatabaseNode } from "@react-firebase/database";
 
+import Page from '../../components/Page';
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
-import Seperator from '../../components/Seperator';
 import Activities from '../../components/Activities'
 
 const filterRecentActivites = (activities) =>
@@ -24,16 +24,14 @@ class ActivitiesPage extends Component {
   render() {
     const { userId } = this.props;
     return (
-      <>
+      <Page>
         {
           userId ?
           <FirebaseDatabaseNode path={"users/" + userId}>
             {data => {
               if (data.isLoading) return <Loading />;
-              if (! data.value) return <EmptyResponse text="No goals!" />;
-              console.log("jee", data);
+              if (! data.value || ! data.value.useractivities) return <EmptyResponse text="No activites!" />;
               const recentActivites = filterRecentActivites(data.value.useractivities);
-              
               return (
                 <>
                   <Heading text="Recent Activities" />
@@ -48,7 +46,7 @@ class ActivitiesPage extends Component {
           </FirebaseDatabaseNode> :
           <Loading />
         }
-      </>
+      </Page>
     );
   }
 }
