@@ -5,17 +5,17 @@ import Button from './Button';
 class ShareButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {shared: false};
+    this.state = {sent: false};
   }
 
   render() {
     return (
       <Button
         onClick={() => {
-          this.setState({shared: true});
+          this.setState({sent: true});
         }}
       >
-        {this.state.shared ? "Shared!" : "Share"}
+        {this.state.sent ? "Goal sent!" : "Send to a friend!"}
       </Button>
     );
   }
