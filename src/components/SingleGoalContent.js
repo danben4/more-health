@@ -23,7 +23,6 @@ class SingleGoalContent extends React.Component {
               <span>{goal.companyName}</span>
             </div>
             <div className="singleGoalDescription">{goal.description}</div>
-            <div className="bottomContent">
               {
                 ! data.value ?
                   <FirebaseDatabaseMutation
@@ -32,42 +31,59 @@ class SingleGoalContent extends React.Component {
                   >
                     {({runMutation}) => {
                       return (
-                        <div className="singleGoalButtons">
-                          <ShareButton />
-                          <Button
-                            onClick={() => {
-                              runMutation({
-                                companyName: goal.companyName,
-                                description: goal.description,
-                                endDate: endDate,
-                                imageUrl: goal.imageUrl,
-                                isComplete: 0,
-                                name: goal.name,
-                                startDate: today,
-                                totalCompleted: 0.0,
-                                category: goal.category,
-                                total: goal.metric,
-                              })
-                            }}
-                          >
-                            Activate goal!
-                          </Button>
-                        </div>
+                        <>
+                          <div className="singleGoalPoints">
+                            <div>- This goal is <span className="danger">not activated!</span></div>
+                            <div>- <span className="importantNumber">287 users</span> already finished this goal!</div>
+                            <div>- <span className="importantNumber">80% of users</span> finish this goal!</div>
+                          </div>
+                          <div className="bottomContent">
+                            <div className="singleGoalButtons">
+                              <ShareButton />
+                              <Button
+                                onClick={() => {
+                                  runMutation({
+                                    companyName: goal.companyName,
+                                    description: goal.description,
+                                    endDate: endDate,
+                                    imageUrl: goal.imageUrl,
+                                    isComplete: 0,
+                                    name: goal.name,
+                                    startDate: today,
+                                    totalCompleted: 0.0,
+                                    category: goal.category,
+                                    total: goal.metric,
+                                  })
+                                }}
+                              >
+                                Activate goal!
+                              </Button>
+                            </div>
+                          </div>
+                        </>
                       );
                     }}
                   </FirebaseDatabaseMutation> :
-                  <div className="progressContent">
-                    <ShareButton />
-                    {
-                      data.value.totalCompleted === 1 ?
-                      <RedeemButtonCoupon/> :
-                      <div className="progressBar">
-                        <Progress totalCompleted={data.value.totalCompleted} /> 
-                      </div> 
-                    }
-                  </div>
+                  <>
+                    <div className="singleGoalPoints">
+                      <div>- This goal is <span className="success">activated!</span></div>
+                      <div>- <span className="importantNumber">287 users</span> already finished this goal!</div>
+                      <div>- <span className="importantNumber">80% of users</span> finish this goal!</div>
+                    </div>
+                    <div className="bottomContent">
+                      <div className="progressContent">
+                        <ShareButton />
+                        {
+                          data.value.totalCompleted === 1 ?
+                          <RedeemButtonCoupon/> :
+                          <div className="progressBar">
+                            <Progress totalCompleted={data.value.totalCompleted} /> 
+                          </div> 
+                        }
+                      </div>
+                    </div>
+                  </>
               }
-            </div>
           </div>
         </div>
       </div>
