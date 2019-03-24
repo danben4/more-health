@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 import './Header.css';
 
-const Header = () => {
+const Header = (user) => {
+  console.log(user)
   return (
     <div className="header">
       <div className="innerHeader">
@@ -11,7 +12,7 @@ const Header = () => {
         <div className="headerLinks">
           <Link to="/activities/" className="headerLink">Activities</Link>
           <Link to="/goals/" className="headerLink">All goals</Link>
-          <Link to="/overview/" className="headerLink">My goals</Link>
+          <Link to="/overview/" className="headerLink">{user.userName}</Link>
         </div>
       </div>
     </div>

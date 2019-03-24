@@ -35,7 +35,7 @@ class OverviewPage extends Component {
               const completedGoals = filterCompletedGoals(activeGoals);
               return (
                 <>
-                  <Heading text="Active Goals" />
+                  <Heading text="My Goals" />
                   {
                     inCompletedGoals.length === 0 ?
                     <EmptyResponse text="No active goals!" /> :
