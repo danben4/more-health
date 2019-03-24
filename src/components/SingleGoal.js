@@ -2,6 +2,7 @@ import React from 'react';
 import { FirebaseDatabaseNode, FirebaseDatabaseMutation } from "@react-firebase/database";
 
 import Button from './Button';
+import Progress from './Progress';
 import './SingleGoal.css';
 
 const SingleGoal = ({goalId, goal, userId}) => {
@@ -11,42 +12,53 @@ const SingleGoal = ({goalId, goal, userId}) => {
   return (
     <FirebaseDatabaseNode path={"users/" + userId + "/usergoals/" + goalId}>
       {data => {
-        console.log("dataSINGLE", data);
         return (
-          <>
-            <div className="singleGoal">
-              <div className="singleGoalDescription">{goal.description}</div>
-              <img alt="" src={goal.imageUrl} className="singleGoalImage" /> :
+          <div className="singleGoal">
+            <img alt="" src={goal.imageUrl} className="singleGoalImage" />
+            <div className="singleGoalContent">
+              <div className="singleGoalInnerContent">
+                <div className="singleGoalName">
+                  <span>{goal.name}</span>
+                  <span>{goal.companyName}</span>
+                </div>
+                <div className="singleGoalDescription">{goal.description}</div>
+                <div className="bottomContent">
+                  {
+                    ! data.value ?
+                      <FirebaseDatabaseMutation
+                        type="set"
+                        path={"users/" + userId + "/usergoals/" + goalId}
+                      >
+                        {({runMutation}) => {
+                          return (
+                            <Button
+                              onClick={() => {
+                                runMutation({
+                                  companyName: goal.companyName,
+                                  description: goal.description,
+                                  endDate: endDate,
+                                  imageUrl: goal.imageUrl,
+                                  isComplete: 0,
+                                  name: goal.name,
+                                  startDate: today,
+                                  totalCompleted: 0.0,
+                                  category: goal.category,
+                                })
+                              }}
+                            >
+                              Activate goal!
+                            </Button>
+                          );
+                        }}
+                      </FirebaseDatabaseMutation> :
+                      <div className="progressContent">
+                        <Progress totalCompleted={data.value.totalCompleted} />
+                      </div>
+                  }
+                </div>
+              </div>
             </div>
-            {
-              ! data.value ?
-                <FirebaseDatabaseMutation
-                  type="set"
-                  path={"users/" + userId + "/usergoals/" + goalId}
-                >
-                  {({ runMutation }) => (
-                    <Button
-                      onClick={() => {
-                        runMutation({
-                          companyName: goal.companyName,
-                          description: goal.description,
-                          endDate: endDate,
-                          imageUrl: goal.imageUrl,
-                          isComplete: 0,
-                          name: goal.name,
-                          startDate: today,
-                          totalCompleted: 0.0,
-                          category: goal.category,
-                        })
-                      }}
-                    >
-                      Activate goal!
-                    </Button>
-                  )}
-                </FirebaseDatabaseMutation> :
-                null
-            }
-          </>
+          </div>
         );
       }}
     </FirebaseDatabaseNode>
