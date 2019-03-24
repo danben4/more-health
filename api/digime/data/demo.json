@@ -23,7 +23,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":100,
-         "calories":223,
+         "calories":429,
          "createddate":1553731200000,
          "distance":0,
          "durations":{  
@@ -100,7 +100,7 @@
          "activityname":"Run",
          "activitytypeid":"90013",
          "averageheartrate":93,
-         "calories":152,
+         "calories":642,
          "createddate":1553817600000,
          "distance":5400,
          "durations":{  
@@ -171,7 +171,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":100,
-         "calories":223,
+         "calories":294,
          "createddate":1553904000000,
          "distance":0,
          "durations":{  
@@ -325,7 +325,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":113,
-         "calories":274,
+         "calories":502,
          "createddate":1554076800000,
          "distance":0,
          "durations":{  
@@ -401,7 +401,7 @@
          ],
          "activityname":"Cycling",
          "activitytypeid":"90019",
-         "averageheartrate":115,
+         "averageheartrate":782,
          "calories":225,
          "createddate":1554163200000,
          "distance":24700,
@@ -473,7 +473,7 @@
          "activityname":"Run",
          "activitytypeid":"90013",
          "averageheartrate":97,
-         "calories":136,
+         "calories":406,
          "createddate":1554249600000,
          "distance":8200,
          "durations":{  
@@ -621,7 +621,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":103,
-         "calories":247,
+         "calories":347,
          "createddate":1554940800000,
          "distance":0,
          "durations":{  
@@ -698,7 +698,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":103,
-         "calories":247,
+         "calories":287,
          "createddate":1555027200000,
          "distance":0,
          "durations":{  
@@ -775,7 +775,7 @@
          "activityname":"Run",
          "activitytypeid":"90013",
          "averageheartrate":93,
-         "calories":150,
+         "calories":550,
          "createddate":1555200000000,
          "distance":13200,
          "durations":{  
@@ -846,7 +846,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":100,
-         "calories":223,
+         "calories":283,
          "createddate":1555286400000,
          "distance":0,
          "durations":{  
@@ -923,7 +923,7 @@
          "activityname":"Run",
          "activitytypeid":"90013",
          "averageheartrate":104,
-         "calories":170,
+         "calories":670,
          "createddate":1555459200000,
          "distance":7400,
          "durations":{  
@@ -994,7 +994,7 @@
          "activityname":"Run",
          "activitytypeid":"90013",
          "averageheartrate":104,
-         "calories":170,
+         "calories":470,
          "createddate":1555891200000,
          "distance":10000,
          "durations":{  
@@ -1064,8 +1064,8 @@
          ],
          "activityname":"Cycling",
          "activitytypeid":"90019",
-         "averageheartrate":110,
-         "calories":161,
+         "averageheartrate":510,
+         "calories":510,
          "createddate":1555977600000,
          "distance":18600,
          "durations":{  
@@ -1136,7 +1136,7 @@
          "activityname":"Workout",
          "activitytypeid":"3000",
          "averageheartrate":113,
-         "calories":274,
+         "calories":214,
          "createddate":1556150400000,
          "distance":0,
          "durations":{  
