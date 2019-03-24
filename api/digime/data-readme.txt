@@ -1,5 +1,5 @@
 The demo.json file include the following activities from March 2019:
-	- 7 workouts
+	- 9 workouts
 	- 5 runs:
 		- 5,4 km
 		- 8,2 km
@@ -28,6 +28,6 @@ The demo.json file include the following activities from March 2019:
 	 - Finish running > 42 km in a month.
 
 	Working on two more goals:
-	 - Workout goal: 10 skipti
+	 - Workout goal: 15 skipti
 	 - Cycle goal : 80 km
 
