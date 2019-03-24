@@ -76,9 +76,10 @@ class SingleGoalContent extends React.Component {
                         {
                           data.value.totalCompleted === 1 ?
                           <RedeemButtonCoupon/> :
-                          <div className="progressBar">
-                            <Progress totalCompleted={data.value.totalCompleted} /> 
-                          </div> 
+                          data.value.totalCompleted === 0 ? null :
+                            <div className="progressBar">
+                              <Progress totalCompleted={data.value.totalCompleted} /> 
+                            </div> 
                         }
                       </div>
                     </div>

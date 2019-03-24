@@ -18,7 +18,11 @@ const Progress = ({totalCompleted}) => {
           backgroundColor: getBarColor(totalCompleted)
         }}
       />
-      <span className="number">{Math.round(totalCompleted * 100)}%</span>
+      <span
+        className="number"
+      >
+        {Math.round(totalCompleted * 100)}%
+      </span>
     </div>
   )
 };
