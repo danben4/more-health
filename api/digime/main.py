@@ -20,8 +20,8 @@ def __get_user_by_id(id):
 def __sync_digime(request):
     req = request.json
     file_index = req['fileId']
-    run_cat_name = 'Run'
-    count_cat_name = 'Count'
+    distance_categories = ['Run', 'Cycling']
+    count_categories = ['Workout']
     # Find the correct user
     id = request.path.lstrip('/')
     user = __get_user_by_id(id)
@@ -33,11 +33,10 @@ def __sync_digime(request):
         cat = goal['category']
         goal_start = goal['startDate']
         goal_end = goal['endDate']
-        increment = run_cat_name if cat == 'Run' else count_cat_name
         root = 'data'
         total = 0
         goal_total = goal['total']
-        if increment == run_cat_name:
+        if cat in distance_categories:
             goal_total *= 1000   # converts to KM from M
 
         all_files = ['demo0.json', 'demo.json']
@@ -48,16 +47,15 @@ def __sync_digime(request):
                 if data['fileDescriptor']['serviceName'] == 'fitbit':
                     for file_data in data['fileData']:
                         ts = int(file_data["createddate"] / 1000)
-                        # stamp = datetime.utcfromtimestamp(ts)  # .strftime('%Y-%m-%d %H:%M:%S')
                         if goal_start <= ts <= goal_end:
                             activity_name = file_data["activityname"]
                             # Found activity that matches the current goal
                             steps = file_data["steps"]
                             calories = file_data["calories"]
                             distance = file_data["distance"]
-                            if increment == activity_name == "Run":
+                            if activity_name in distance_categories and cat in distance_categories:
                                 total += distance
-                            elif increment == "Count" and activity_name != "Run":
+                            elif activity_name in count_categories and cat in count_categories:
                                 total += 1
         except Exception as e:
             print(str(e))
