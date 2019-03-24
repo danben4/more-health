@@ -51,7 +51,7 @@ const SingleGoal = ({goalId, goal, userId}) => {
                         )}
                       </FirebaseDatabaseMutation> :
                       <div className="progressContent">
-                        <Progress totalCompleted={0.2} />
+                        <Progress totalCompleted={data.value.totalCompleted} />
                       </div>
                   }
                 </div>
