@@ -48,13 +48,13 @@ class OverviewPage extends Component {
                   {
                     inCompletedGoals.length === 0 ?
                     <EmptyResponse text="No active goals!" /> :
-                    <Goals goals={inCompletedGoals} />
+                    <Goals goals={inCompletedGoals} isCompanyGoal={false}/>
                   }
                   <Seperator />
                   <Heading text="Completed Goals" />
                   {completedGoals.length === 0 ?
                     <EmptyResponse text="No completed goals!" /> :
-                    <Goals goals={completedGoals} isCompanyGoal={false} />
+                    <Goals goals={completedGoals} isCompanyGoal={false}/>
                   }
                 </>
               );

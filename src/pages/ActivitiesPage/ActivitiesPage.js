@@ -20,7 +20,7 @@ class ActivitiesPage extends Component {
   render() {
     const { userId } = this.props;
     return (
-      <Page>
+      <Page className="homePage">
         {
           userId ?
           <FirebaseDatabaseNode path={"users/" + userId}>

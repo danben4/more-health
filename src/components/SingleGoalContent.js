@@ -58,8 +58,8 @@ class SingleGoalContent extends React.Component {
                   <div className="progressContent">
                     <ShareButton />
                     <div className="progressBar">
-                      <Progress totalCompleted={data.value.totalCompleted} />
-                    </div>
+                      <Progress totalCompleted={data.value.totalCompleted} /> 
+                    </div> 
                   </div>
               }
             </div>

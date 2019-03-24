@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import Progress from './Progress';
+import RedeemCouponButton from './RedeemCouponButton';
 import './Goal.css';
+
 
 const Goal = ({goal, isCompanyGoal}) => {
   return (
@@ -25,7 +27,11 @@ const Goal = ({goal, isCompanyGoal}) => {
           {
           isCompanyGoal ? 
           <div></div> :
-          <div className="goalProgress"><Progress totalCompleted={goal.totalCompleted} /></div>
+          (
+            goal.isComplete ?
+            <RedeemCouponButton/> :
+            <div className="goalProgress"><Progress totalCompleted={goal.totalCompleted} /></div> 
+          )
           }
         </div>
       </div>
