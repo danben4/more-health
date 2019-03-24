@@ -332,7 +332,7 @@
          "activitytypeid":"3000",
          "averageheartrate":110,
          "calories":237,
-         "createddate":1551398400000,
+         "createddate":1554172430000,
          "distance":0,
          "durations":{  
             "active":1612000,
@@ -374,7 +374,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -383,7 +383,7 @@
          },
          "speed":0,
          "steps":1085,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -409,7 +409,7 @@
          "activitytypeid":"3000",
          "averageheartrate":103,
          "calories":247,
-         "createddate":1551398400000,
+         "createddate":1554172430000,
          "distance":0,
          "durations":{  
             "active":1870000,
@@ -451,7 +451,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -460,7 +460,7 @@
          },
          "speed":0,
          "steps":1073,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -486,7 +486,7 @@
          "activitytypeid":"3000",
          "averageheartrate":103,
          "calories":247,
-         "createddate":1551398400000,
+         "createddate":1554172430000,
          "distance":0,
          "durations":{  
             "active":1870000,
@@ -528,7 +528,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -537,7 +537,7 @@
          },
          "speed":0,
          "steps":1073,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -563,7 +563,7 @@
          "activitytypeid":"90013",
          "averageheartrate":93,
          "calories":152,
-         "createddate":1551398400000,
+         "createddate":1554172430000,
          "distance":5400,
          "durations":{  
             "active":1024000,
@@ -605,10 +605,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "speed":0,
          "steps":1497,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -634,7 +634,7 @@
          "activitytypeid":"90013",
          "averageheartrate":97,
          "calories":136,
-         "createddate":1551398400000,
+         "createddate":1554172430000,
          "distance":8200,
          "durations":{  
             "active":921000,
@@ -676,10 +676,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "speed":0,
          "steps":1424,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -705,7 +705,7 @@
          "activitytypeid":"90013",
          "averageheartrate":93,
          "calories":150,
-         "createddate":1551398400000,
+         "createddate":1554172430000,
          "distance":13200,
          "durations":{  
             "active":1075000,
@@ -747,10 +747,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "speed":0,
          "steps":1614,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -818,10 +818,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1551398400000,
+         "originalstartdate":1554172430000,
          "speed":0,
          "steps":1738,
-         "updateddate":1551398400000
+         "updateddate":1554172430000
       },
       {
          "accountentityid":"18_644MGZ",
