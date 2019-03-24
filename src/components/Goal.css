@@ -54,7 +54,7 @@
 }
 
 .goalDescription {
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .goalRightContent,
@@ -85,7 +85,7 @@
 }
 
 .goalImage {
-  width: 40%;
+  width: 50%;
   height: auto;
   border-radius: 5px;
   transition: all 0.4s;
