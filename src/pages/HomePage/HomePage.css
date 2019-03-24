@@ -1,0 +1,50 @@
+.homePageRoot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  background-image: url("https://images.pexels.com/photos/421160/pexels-photo-421160.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.homePageContent {
+  position: relative;
+  padding: 40px 40px 0 40px;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  flex-grow: 1;
+}
+
+.homePageWrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logInButton {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.homePageLogo {
+  font-size: 32px;
+}
+
+.homePageHeaderText {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.homePageHeaderSubText {
+  font-size: 28px;
+  margin-bottom: 150px;
+}

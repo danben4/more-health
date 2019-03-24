@@ -9,6 +9,7 @@ import { FirebaseDatabaseProvider } from "@react-firebase/database";
 import { config } from "./firebaseConfig";
 
 import Loading from './components/Loading'
+import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import OverviewPage from "./pages/OverviewPage/OverviewPage";
 import GoalsPage from "./pages/GoalsPage/GoalsPage";
@@ -30,7 +31,7 @@ class Router extends Component {
                 <BrowserRouter>
                   <Header userName={user.displayName} />
                   <div className="root">  
-                    <RedirectRoute path="/" component={LoginPage} />
+                    <RedirectRoute path="/" component={HomePage} />
                     <Route path="/login" component={LoginPage}/>
                     <PrivateRoute path="/activities/" component={ActivitiesPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
                     <PrivateRoute path="/overview/" component={OverviewPage} isSignedIn={isSignedIn} userId={user ? user.uid : null} />
