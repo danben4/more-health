@@ -5,7 +5,7 @@ import Page from '../../components/Page';
 import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
-import Goals from '../../components/Goals';
+import FilterGoals from '../../components/FilterGoals';
 
 const getGoals = (goals) =>
   Object.keys(goals).map(
@@ -26,7 +26,7 @@ class GoalsPage extends Component {
               if (! data.value) return <EmptyResponse text="No goals!" />;
               const goals = getGoals(data.value);
               return (
-                <Goals goals={goals} isCompanyGoal />
+                <FilterGoals goals={goals} isCompanyGoal />
               );
             }}
           </FirebaseDatabaseNode> :
