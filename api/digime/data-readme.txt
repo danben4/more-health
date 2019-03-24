@@ -9,7 +9,7 @@ The demo.json file include the following activities from March 2019:
 		-----------
 		total: 44,2 km
 
-	- 2 cycle sessions:
+	- 2 cycling sessions:
 		- 24,7 km
 		- 18,6 km
 		-----------
@@ -19,7 +19,7 @@ The demo.json file include the following activities from March 2019:
 		- workout - 11.03.2019
 		- run	  - 14.03.2019
 		- run	  - 18.03.2019
-		- cycle   - 19.03.2019
+		- cycling   - 19.03.2019
 		- workout - 21.03.2019
 
 
@@ -29,5 +29,5 @@ The demo.json file include the following activities from March 2019:
 
 	Working on two more goals:
 	 - Workout goal: 15 skipti
-	 - Cycle goal : 80 km
+	 - Cycling goal : 80 km
 
