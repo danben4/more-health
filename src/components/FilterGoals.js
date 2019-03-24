@@ -17,14 +17,18 @@ class FilterGoals extends React.Component {
   filter = value => {
     if (this.state.filters.includes(value)) {
       const filters = this.state.filters.filter(item => item !== value);
-      const goals = this.state.initialGoals.filter(goal => filters.includes(goal.category));
+      const goals = filters.length === 0 ?
+        this.state.initialGoals :
+        this.state.initialGoals.filter(goal => filters.includes(goal.category));
       this.setState({
         filters: filters,
         goals: goals,
       })
     } else {
       this.state.filters.push(value);
-      const goals = this.state.initialGoals.filter(goal => this.state.filters.includes(goal.category));
+      const goals = this.state.filters.length === 0 ?
+        this.state.initialGoals :
+        this.state.initialGoals.filter(goal => this.state.filters.includes(goal.category));
       this.setState({
         filters: this.state.filters,
         goals: goals,
