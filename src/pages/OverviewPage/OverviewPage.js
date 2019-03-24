@@ -21,7 +21,7 @@ const filterCompletedGoals = (activeGoals) => activeGoals.filter(goal => goal.to
 
 const filterInCompletedGoals = (activeGoals) => activeGoals.filter(goal => goal.totalCompleted < 1);
 
-const filterRecentActivites = (activities) =>
+const filterActivites = (activities) =>
   Object.keys(activities).map(
     key => {return {id: key, ...activities[key]}}
   ).slice(0, 5);
@@ -48,6 +48,7 @@ class OverviewPage extends Component {
               const activeGoals = filterActiveGoals(data.value.usergoals);
               const inCompletedGoals = filterInCompletedGoals(activeGoals);
               const completedGoals = filterCompletedGoals(activeGoals);
+              const activities = filterActivites(data.value.useractivities);
               return (
                 <>
                   <Heading text="My Goals" />
@@ -64,7 +65,10 @@ class OverviewPage extends Component {
                   }
                   <Seperator />
                   <Heading text="My Activities" />
-                  <Activities activities={filterRecentActivites(data.value.useractivities)}/>
+                  {activities.length === 0 ?
+                    <EmptyResponse text="No recent activities!" /> :
+                    <Activities activities={activities}/>
+                  }
                 </>
               );
             }}
