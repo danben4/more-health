@@ -34,8 +34,8 @@ class SingleGoalContent extends React.Component {
                         <>
                           <div className="singleGoalPoints">
                             <div>- This goal is <span className="danger">not activated!</span></div>
-                            <div>- <span className="importantNumber">287 users</span> already finished this goal!</div>
-                            <div>- <span className="importantNumber">80% of users</span> finish this goal!</div>
+                            <div>- <span className="importantNumber">{200 + Math.floor(Math.random() * 100)} users</span> already finished this goal!</div>
+                            <div>- <span className="importantNumber">{Math.floor(Math.random() * 100)}% of users</span> finish this goal!</div>
                           </div>
                           <div className="bottomContent">
                             <div className="singleGoalButtons">
@@ -67,8 +67,8 @@ class SingleGoalContent extends React.Component {
                   <>
                     <div className="singleGoalPoints">
                       <div>- This goal is <span className="success">activated!</span></div>
-                      <div>- <span className="importantNumber">287 users</span> already finished this goal!</div>
-                      <div>- <span className="importantNumber">80% of users</span> finish this goal!</div>
+                      <div>- <span className="importantNumber">{200 + Math.floor(Math.random() * 100)} users</span> already finished this goal!</div>
+                      <div>- <span className="importantNumber">{Math.floor(Math.random() * 100)}% of users</span> finish this goal!</div>
                     </div>
                     <div className="bottomContent">
                       <div className="progressContent">
