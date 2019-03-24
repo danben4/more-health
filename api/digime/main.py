@@ -40,7 +40,7 @@ def __sync_digime(request):
         if increment == run_cat_name:
             goal_total *= 1000   # converts to KM from M
 
-        all_files = ['demo1.json', 'demo2.json', 'demo3.json']
+        all_files = ['demo0.json', 'demo.json']
         file = all_files[file_index]
         try:
             with open(os.path.join(root, file), encoding='utf-8') as f:
@@ -73,7 +73,7 @@ def __sync_digime(request):
 
 
 def __add_user_recent_activities(user, file_index):
-    all_files = ['demo1.json', 'demo2.json', 'demo3.json']
+    all_files = ['demo0.json', 'demo.json']
     file = all_files[file_index]
     activities_ref = user.child('useractivities')
     activities_ref.delete()
@@ -84,11 +84,10 @@ def __add_user_recent_activities(user, file_index):
                 for file_data in data['fileData']:
                     ts = int(file_data["createddate"])
                     activity = {}
-                    activity['date'] = ts  # .strftime('%Y-%m-%d %H:%M:%S')
+                    activity['date'] = ts
                     activity['category'] = file_data["activityname"]
                     activity['calories'] = file_data["calories"]
                     activity['distance'] = file_data["distance"]
-                    # test
                     activities_ref.push(activity)
     except Exception as e:
         print(str(e))

@@ -1,32 +1,33 @@
-
-There are three demo JSON files:
-
-These are activities from 1st - 10th of April 2018.
-
-demo1.json: Used when the demo-user is first synching his data. Includes no activities.
-
-demo2.json: When demo-user synchs for the second time. Includes:
-	- 4 workouts.
+The demo.json file include the following activities from March 2019:
+	- 7 workouts
 	- 5 runs:
-		- 4 km.
-		- 5 km.
-		- 7 km.
-		- 8 km.
-		- 5 km.
-		-------
-		total: 29 km.
+		- 5,4 km
+		- 8,2 km
+		- 13,2 km
+		- 7,4 km
+		- 10,0 km
+		-----------
+		total: 44,2 km
+
+	- 2 cycle sessions:
+		- 24,7 km
+		- 18,6 km
+		-----------
+		total: 43,3 km
+
+	- The most recent activities (5 latest):
+		- workout - 11.03.2019
+		- run	  - 14.03.2019
+		- run	  - 18.03.2019
+		- cycle   - 19.03.2019
+		- workout - 21.03.2019
 
 
-demo3.json: When demo-user synchs for the last time. Includes:
-	- 7 workouts.
-	- 7 runs:
-		- 4 km.
-		- 5 km.
-		- 7 km.
-		- 8 km.
-		- 5 km.
-		- 6 km.
-		- 7 km.
-		-------
-		total: 42 km.
+	Two goals completed with this data:
+	 - Finish a 5K run.
+	 - Finish running > 42 km in a month.
+
+	Working on two more goals:
+	 - Workout goal: 10 skipti
+	 - Cycle goal : 80 km
 
