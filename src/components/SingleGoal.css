@@ -36,8 +36,13 @@
   font-size: 22px;
 }
 
-.buttonContent {
+.bottomContent {
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   margin-top: 40px;
+}
+
+.progressContent {
+  width: 200px;
 }

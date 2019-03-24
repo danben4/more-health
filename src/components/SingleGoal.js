@@ -2,6 +2,7 @@ import React from 'react';
 import { FirebaseDatabaseNode, FirebaseDatabaseMutation } from "@react-firebase/database";
 
 import Button from './Button';
+import Progress from './Progress';
 import './SingleGoal.css';
 
 const SingleGoal = ({goalId, goal, userId}) => {
@@ -22,14 +23,14 @@ const SingleGoal = ({goalId, goal, userId}) => {
                   <span>{goal.companyName}</span>
                 </div>
                 <div className="singleGoalDescription">{goal.description}</div>
-                {
-                  ! data.value ?
-                    <FirebaseDatabaseMutation
-                      type="set"
-                      path={"users/" + userId + "/usergoals/" + goalId}
-                    >
-                      {({ runMutation }) => (
-                        <div className="buttonContent">
+                <div className="bottomContent">
+                  {
+                    ! data.value ?
+                      <FirebaseDatabaseMutation
+                        type="set"
+                        path={"users/" + userId + "/usergoals/" + goalId}
+                      >
+                        {({ runMutation }) => (
                           <Button
                             onClick={() => {
                               runMutation({
@@ -47,13 +48,13 @@ const SingleGoal = ({goalId, goal, userId}) => {
                           >
                             Activate goal!
                           </Button>
-                        </div>
-                      )}
-                    </FirebaseDatabaseMutation> :
-                    <div>
-                      Activated goal!
-                    </div>
-                }
+                        )}
+                      </FirebaseDatabaseMutation> :
+                      <div className="progressContent">
+                        <Progress totalCompleted={0.2} />
+                      </div>
+                  }
+                </div>
               </div>
             </div>
           </div>
