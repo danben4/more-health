@@ -16,11 +16,11 @@ The demo.json file include the following activities from March 2019:
 		total: 43,3 km
 
 	- The most recent activities (5 latest):
-		- workout - 11.03.2019
-		- run	  - 14.03.2019
-		- run	  - 18.03.2019
-		- cycling   - 19.03.2019
-		- workout - 21.03.2019
+		- workout - 15.04.2019
+		- run	  - 17.04.2019
+		- run	  - 22.04.2019
+		- cycling   - 23.04.2019
+		- workout - 25.04.2019
 
 
 	Two goals completed with this data:

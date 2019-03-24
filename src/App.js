@@ -28,7 +28,7 @@ class Router extends Component {
             {({ isSignedIn, providerId, user }) => {
               return providerId ?
                 <BrowserRouter>
-                  <Header />
+                  <Header userName={user.displayName} />
                   <div className="root">  
                     <RedirectRoute path="/" component={LoginPage} />
                     <Route path="/login" component={LoginPage}/>

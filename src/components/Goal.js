@@ -8,10 +8,18 @@ const Goal = ({goal, isCompanyGoal}) => {
   return (
     <Link to={"/goal?id=" + goal.id} className="goal">
       <div  className="goalContent">
-        <div className="goalRightContent">
-          <div className="goalName">{goal.name}</div>
-          <div className="goalDescription">{goal.description}</div>
-        </div>
+        {
+          isCompanyGoal ?
+          <div className="companyGoalRightContent">
+            <div className="goalName">{goal.name}</div>
+            <div className="goalDescription">{goal.description}</div>
+          </div> : 
+          <div className="goalRightContent">
+            <div className="goalName">{goal.name}</div>
+            <div className="goalDescription">{goal.description}</div>
+          </div>
+        }
+        
         <div className="goalLeftContent">
           <div className="goalCompany">{goal.companyName}</div>
           {
