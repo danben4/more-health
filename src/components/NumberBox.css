@@ -1,0 +1,19 @@
+.numberBox {
+  padding: 30px;
+  border: solid 1px #f8bbd0;
+  border-radius: 5px;
+}
+
+.numberBoxLabel {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.numberBoxNumber {
+  font-size: 58px;
+}
+
+.numberBoxNumberLabel {
+  font-size: 24px;
+  margin-left: 10px;
+}

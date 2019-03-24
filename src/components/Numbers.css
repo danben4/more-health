@@ -1,0 +1,10 @@
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.numbers > div {
+  width: calc(50% - 100px);
+  margin-bottom: 60px;
+}

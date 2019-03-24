@@ -6,6 +6,8 @@ import Heading from '../../components/Heading';
 import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
 import Activities from '../../components/Activities'
+import Numbers from '../../components/Numbers'
+import Seperator from '../../components/Seperator';
 
 const filterRecentActivites = (activities) =>
   Object.keys(activities).map(
@@ -33,6 +35,9 @@ class ActivitiesPage extends Component {
               const recentActivites = filterRecentActivites(data.value.useractivities);
               return (
                 <>
+                  <Heading text="Key Numbers" />
+                  <Numbers />
+                  <Seperator />
                   <Heading text="Recent Activities" />
                   {
                     recentActivites.length === 0 ?
