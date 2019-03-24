@@ -48,5 +48,16 @@
 }
 
 .progressContent {
+  display: flex;
+  align-items: center;
+}
+
+.progressBar {
   width: 200px;
+  margin-left: 20px;
+}
+
+
+.singleGoalButtons button {
+  margin-left: 15px;
 }
