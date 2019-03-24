@@ -1,5 +1,5 @@
 {  
-   "fileData":[  
+   "fileData":[
       {  
          "accountentityid":"18_644MGZ",
          "activitylevel":[  
@@ -24,7 +24,7 @@
          "activitytypeid":"3000",
          "averageheartrate":100,
          "calories":223,
-         "createddate":1523386055000,
+         "createddate":1551398400000,
          "distance":0,
          "durations":{  
             "active":2055000,
@@ -66,7 +66,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1523386055000,
+         "originalstartdate":1551398400000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -75,7 +75,161 @@
          },
          "speed":0,
          "steps":704,
-         "updateddate":1523391285000
+         "updateddate":1551398400000
+      },
+      {  
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":5,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":18,
+               "name":"lightly"
+            },
+            {  
+               "minutes":11,
+               "name":"fairly"
+            },
+            {  
+               "minutes":0,
+               "name":"very"
+            }
+         ],
+         "activityname":"Workout",
+         "activitytypeid":"3000",
+         "averageheartrate":100,
+         "calories":223,
+         "createddate":1551398400000,
+         "distance":0,
+         "durations":{  
+            "active":2055000,
+            "original":2056000,
+            "total":2056000
+         },
+         "elevationgain":14.326,
+         "entityid":"18_644MGZ_13470096945",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":8,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":26,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":0,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13470096945",
+         "logtype":"tracker",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1551398400000,
+         "source":{  
+            "id":"72319970",
+            "name":"Blaze",
+            "type":"tracker",
+            "url":"https://www.fitbit.com/"
+         },
+         "speed":0,
+         "steps":704,
+         "updateddate":1551398400000
+      },
+      {  
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":5,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":18,
+               "name":"lightly"
+            },
+            {  
+               "minutes":11,
+               "name":"fairly"
+            },
+            {  
+               "minutes":0,
+               "name":"very"
+            }
+         ],
+         "activityname":"Workout",
+         "activitytypeid":"3000",
+         "averageheartrate":100,
+         "calories":223,
+         "createddate":1551398400000,
+         "distance":0,
+         "durations":{  
+            "active":2055000,
+            "original":2056000,
+            "total":2056000
+         },
+         "elevationgain":14.326,
+         "entityid":"18_644MGZ_13470096945",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":8,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":26,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":0,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13470096945",
+         "logtype":"tracker",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1551398400000,
+         "source":{  
+            "id":"72319970",
+            "name":"Blaze",
+            "type":"tracker",
+            "url":"https://www.fitbit.com/"
+         },
+         "speed":0,
+         "steps":704,
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -101,7 +255,7 @@
          "activitytypeid":"3000",
          "averageheartrate":113,
          "calories":274,
-         "createddate":1523293290000,
+         "createddate":1551398400000,
          "distance":0,
          "durations":{  
             "active":1871000,
@@ -143,7 +297,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1523293290000,
+         "originalstartdate":1551398400000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -152,7 +306,7 @@
          },
          "speed":0,
          "steps":905,
-         "updateddate":1523296756000
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -178,7 +332,7 @@
          "activitytypeid":"3000",
          "averageheartrate":110,
          "calories":237,
-         "createddate":1522687137000,
+         "createddate":1551398400000,
          "distance":0,
          "durations":{  
             "active":1612000,
@@ -220,7 +374,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522687137000,
+         "originalstartdate":1551398400000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -229,7 +383,7 @@
          },
          "speed":0,
          "steps":1085,
-         "updateddate":1522693845000
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -255,7 +409,7 @@
          "activitytypeid":"3000",
          "averageheartrate":103,
          "calories":247,
-         "createddate":1522948534000,
+         "createddate":1551398400000,
          "distance":0,
          "durations":{  
             "active":1870000,
@@ -297,7 +451,7 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522948534000,
+         "originalstartdate":1551398400000,
          "source":{  
             "id":"72319970",
             "name":"Blaze",
@@ -306,7 +460,84 @@
          },
          "speed":0,
          "steps":1073,
-         "updateddate":1522952763000
+         "updateddate":1551398400000
+      },
+      {  
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":1,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":1,
+               "name":"lightly"
+            },
+            {  
+               "minutes":17,
+               "name":"fairly"
+            },
+            {  
+               "minutes":12,
+               "name":"very"
+            }
+         ],
+         "activityname":"Workout",
+         "activitytypeid":"3000",
+         "averageheartrate":103,
+         "calories":247,
+         "createddate":1551398400000,
+         "distance":0,
+         "durations":{  
+            "active":1870000,
+            "original":1872000,
+            "total":1872000
+         },
+         "elevationgain":10.058,
+         "entityid":"18_644MGZ_13368705901",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":3,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":28,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":0,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13368705901",
+         "logtype":"tracker",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1551398400000,
+         "source":{  
+            "id":"72319970",
+            "name":"Blaze",
+            "type":"tracker",
+            "url":"https://www.fitbit.com/"
+         },
+         "speed":0,
+         "steps":1073,
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -332,8 +563,8 @@
          "activitytypeid":"90013",
          "averageheartrate":93,
          "calories":152,
-         "createddate":1522838578000,
-         "distance":4000,
+         "createddate":1551398400000,
+         "distance":5400,
          "durations":{  
             "active":1024000,
             "original":1024000,
@@ -374,10 +605,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522838578000,
+         "originalstartdate":1551398400000,
          "speed":0,
          "steps":1497,
-         "updateddate":1522842907000
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -403,8 +634,8 @@
          "activitytypeid":"90013",
          "averageheartrate":97,
          "calories":136,
-         "createddate":1522833305000,
-         "distance":5000,
+         "createddate":1551398400000,
+         "distance":8200,
          "durations":{  
             "active":921000,
             "original":921000,
@@ -445,10 +676,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522833305000,
+         "originalstartdate":1551398400000,
          "speed":0,
          "steps":1424,
-         "updateddate":1522836739000
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -474,8 +705,8 @@
          "activitytypeid":"90013",
          "averageheartrate":93,
          "calories":150,
-         "createddate":1522824602000,
-         "distance":7000,
+         "createddate":1551398400000,
+         "distance":13200,
          "durations":{  
             "active":1075000,
             "original":1075000,
@@ -516,10 +747,10 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522824602000,
+         "originalstartdate":1551398400000,
          "speed":0,
          "steps":1614,
-         "updateddate":1522828313000
+         "updateddate":1551398400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -541,12 +772,12 @@
                "name":"very"
             }
          ],
-         "activityname":"Run",
-         "activitytypeid":"90013",
+         "activityname":"Cycling",
+         "activitytypeid":"90019",
          "averageheartrate":115,
          "calories":225,
          "createddate":1522775149000,
-         "distance":8000,
+         "distance":24700,
          "durations":{  
             "active":1229000,
             "original":1229000,
@@ -587,10 +818,89 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522775149000,
+         "originalstartdate":1551398400000,
          "speed":0,
          "steps":1738,
-         "updateddate":1522778976000
+         "updateddate":1551398400000
+      },
+
+      -- latest
+      {  
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":5,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":18,
+               "name":"lightly"
+            },
+            {  
+               "minutes":11,
+               "name":"fairly"
+            },
+            {  
+               "minutes":0,
+               "name":"very"
+            }
+         ],
+         "activityname":"Workout",
+         "activitytypeid":"3000",
+         "averageheartrate":100,
+         "calories":223,
+         "createddate":1552262400000,
+         "distance":0,
+         "durations":{  
+            "active":2055000,
+            "original":2056000,
+            "total":2056000
+         },
+         "elevationgain":14.326,
+         "entityid":"18_644MGZ_13470096945",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":8,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":26,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":0,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13470096945",
+         "logtype":"tracker",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1552262400000,
+         "source":{  
+            "id":"72319970",
+            "name":"Blaze",
+            "type":"tracker",
+            "url":"https://www.fitbit.com/"
+         },
+         "speed":0,
+         "steps":704,
+         "updateddate":1552262400000
       },
       {  
          "accountentityid":"18_644MGZ",
@@ -616,8 +926,8 @@
          "activitytypeid":"90013",
          "averageheartrate":104,
          "calories":170,
-         "createddate":1522680973000,
-         "distance":5000,
+         "createddate":1552521600000,
+         "distance":7400,
          "durations":{  
             "active":1076000,
             "original":1076000,
@@ -658,19 +968,238 @@
             "distance":false,
             "steps":false
          },
-         "originalstartdate":1522680973000,
+         "originalstartdate":1552521600000,
          "speed":0,
          "steps":1553,
-         "updateddate":1522686394000
+         "updateddate":1552521600000
+      },
+      {  
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":0,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":1,
+               "name":"lightly"
+            },
+            {  
+               "minutes":2,
+               "name":"fairly"
+            },
+            {  
+               "minutes":14,
+               "name":"very"
+            }
+         ],
+         "activityname":"Run",
+         "activitytypeid":"90013",
+         "averageheartrate":104,
+         "calories":170,
+         "createddate":1552867200000,
+         "distance":10000,
+         "durations":{  
+            "active":1076000,
+            "original":1076000,
+            "total":1076000
+         },
+         "elevationgain":9.144,
+         "entityid":"18_644MGZ_13313927701",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":2,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":16,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":0,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13313927701",
+         "logtype":"auto_detected",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1552867200000,
+         "speed":0,
+         "steps":1553,
+         "updateddate":1552867200000
+      },
+      {  
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":0,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":0,
+               "name":"lightly"
+            },
+            {  
+               "minutes":3,
+               "name":"fairly"
+            },
+            {  
+               "minutes":13,
+               "name":"very"
+            }
+         ],
+         "activityname":"Cycling",
+         "activitytypeid":"90019",
+         "averageheartrate":110,
+         "calories":161,
+         "createddate":1552953600000,
+         "distance":18600,
+         "durations":{  
+            "active":973000,
+            "original":973000,
+            "total":973000
+         },
+         "elevationgain":3.048,
+         "entityid":"18_644MGZ_13306704136",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":0,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":16,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":0,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13306704136",
+         "logtype":"auto_detected",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1552953600000,
+         "speed":0,
+         "steps":1550,
+         "updateddate":1552953600000
+      },
+      {
+         "accountentityid":"18_644MGZ",
+         "activitylevel":[  
+            {  
+               "minutes":0,
+               "name":"sedentary"
+            },
+            {  
+               "minutes":9,
+               "name":"lightly"
+            },
+            {  
+               "minutes":7,
+               "name":"fairly"
+            },
+            {  
+               "minutes":15,
+               "name":"very"
+            }
+         ],
+         "activityname":"Workout",
+         "activitytypeid":"3000",
+         "averageheartrate":113,
+         "calories":274,
+         "createddate":1553126400000,
+         "distance":0,
+         "durations":{  
+            "active":1871000,
+            "original":1872000,
+            "total":1872000
+         },
+         "elevationgain":12.497,
+         "entityid":"18_644MGZ_13440439387",
+         "heartratezones":[  
+            {  
+               "max":93,
+               "min":30,
+               "minutes":4,
+               "name":"Out of Range"
+            },
+            {  
+               "max":130,
+               "min":93,
+               "minutes":24,
+               "name":"Fat Burn"
+            },
+            {  
+               "max":158,
+               "min":130,
+               "minutes":3,
+               "name":"Cardio"
+            },
+            {  
+               "max":220,
+               "min":158,
+               "minutes":0,
+               "name":"Peak"
+            }
+         ],
+         "id":"13440439387",
+         "logtype":"tracker",
+         "manualvaluesspecified":{  
+            "calories":false,
+            "distance":false,
+            "steps":false
+         },
+         "originalstartdate":1553126400000,
+         "source":{  
+            "id":"72319970",
+            "name":"Blaze",
+            "type":"tracker",
+            "url":"https://www.fitbit.com/"
+         },
+         "speed":0,
+         "steps":905,
+         "updateddate":1553126400000
       }
    ],
    "fileDescriptor":{  
-      "objectCount":9,
+      "objectCount":14,
       "objectType":"activity",
       "serviceGroup":"health fitness",
       "serviceName":"fitbit"
    },
-   "fileName":"demo3.json",
+   "fileName":"demo.json",
    "fileList":[  
       "18_1_4_2_7_D201709_1.json",
       "18_2_16_10_129_D201804_1.json",

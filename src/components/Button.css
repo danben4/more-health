@@ -1,4 +1,14 @@
+.reset {
+  text-decoration: none;
+  font-family: inherit;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  color: #fff;
+}
+
 .button {
+  text-decoration: none;
   font-family: inherit;
   background: transparent;
   cursor: pointer;
@@ -9,7 +19,7 @@
   font-size: 22px;
   font-weight: 500;
 
-  background-color: rgba(26, 35, 126, 0.9);
+  background-color: rgba(240, 98, 146, 0.8);
   color: #fff;
   padding: 15px 20px;
   border-radius: 5px;
@@ -17,5 +27,5 @@
 }
 
 .button:hover {
-  background-color: rgba(26, 35, 126, 1);
+  background-color: rgba(240, 98, 146, 1);
 }

@@ -7,6 +7,7 @@ import Loading from '../../components/Loading';
 import EmptyResponse from '../../components/EmptyResponse';
 import Goals from '../../components/Goals';
 import Seperator from '../../components/Seperator';
+import LinkButton from '../../components/LinkButton';
 
 const filterActiveGoals = (goals) =>
   Object.keys(goals).map(
@@ -29,7 +30,15 @@ class OverviewPage extends Component {
           <FirebaseDatabaseNode path={"users/" + userId}>
             {data => {
               if (data.isLoading) return <Loading />;
-              if (! data.value) return <EmptyResponse text="No goals!" />;
+              if (! data.value || ! data.value.usergoals)
+                return (
+                  <>
+                    <EmptyResponse text="No goals :/" />
+                    <LinkButton to="/goals/">
+                      Click here to add some goals!
+                    </LinkButton>
+                  </>
+                );
               const activeGoals = filterActiveGoals(data.value.usergoals);
               const inCompletedGoals = filterInCompletedGoals(activeGoals);
               const completedGoals = filterCompletedGoals(activeGoals);
